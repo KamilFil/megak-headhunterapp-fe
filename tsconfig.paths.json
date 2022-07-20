@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "types": [
-        "../hr-backend/types"
+        "../megak-headhunterapp-be/types"
       ]
     }
   }
