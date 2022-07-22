@@ -1,0 +1,17 @@
+button {
+    background-color: #e02735;
+    border: none;
+    font-weight: 200;
+    padding: 8px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #cd0d1c;
+}
+
+button:active {
+    transform: scale(.97)
+}
+

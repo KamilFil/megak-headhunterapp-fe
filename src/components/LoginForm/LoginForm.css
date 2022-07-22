@@ -1,0 +1,32 @@
+form {
+    display: flex;
+    flex-direction: column;
+    column-gap: 30px;
+}
+
+.forgotten-password {
+    display: block;
+    margin: 0 0 20px auto;
+    text-decoration: none;
+}
+
+.submit-wrap {
+    display: flex;
+    justify-content: space-between;
+    cursor: default;
+}
+
+a {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+p a {
+    text-decoration: underline;
+}
+
+@media (max-width: 425px) {
+    p span {
+        display: block;
+    }
+}
