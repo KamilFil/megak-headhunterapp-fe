@@ -1,0 +1,24 @@
+.person-label, .person-label--wrap, .person-label--wrap p, img {
+    background-color: #1e1e1f;
+}
+
+.person-label {
+    position: relative;
+}
+
+.person-label--wrap {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    cursor: pointer;
+}
+
+.person-label--wrap img {
+    margin: 0 10px 0 0;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.person-label--wrap p {
+    margin-right: 14px;
+}

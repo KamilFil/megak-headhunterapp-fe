@@ -1,0 +1,14 @@
+.menu-bar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px 14vw;
+    background-color: #1e1e1f;
+    position: fixed;
+}
+
+@media (max-width: 425px) {
+    .menu-bar {
+        padding: 10px 4vw;
+    }
+}
