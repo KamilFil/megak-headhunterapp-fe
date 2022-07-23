@@ -1,0 +1,39 @@
+.user-label {
+    background-color: #1e1e1f;
+    position: relative;
+}
+
+.user-label--wrap, .user-label--wrap p, img {
+    background-color: inherit;
+}
+
+.user-label--wrap {
+    display: flex;
+    height: 50px;
+    padding: 0 8px;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.user-label--wrap img {
+    width: 40px;
+    margin: 0 10px 0 0;
+    border-radius: 50%;
+}
+
+.user-label--wrap p {
+    margin-right: 14px;
+}
+
+.user-label--wrap--visible {
+    background-color: rgb(37, 37, 37);
+}
+
+.user-label--wrap:hover {
+    background-color: rgb(48, 48, 48)
+}
+
+
+
+

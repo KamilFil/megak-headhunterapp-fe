@@ -1,14 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-// import './App.css';
-import { Cv } from './components/Cv/Cv';
+import {NavBar} from './components/common/NavBar/NavBar';
+import {Login} from './components/layouts/login/Login';
 
-function App() {
-  return (
-    <div className='App'>
-      <Cv />
-    </div>
-  );
-}
-
-export default App;
+export const App = () => {
+    return (
+        <>
+            <NavBar/>
+            <Login/>
+        </>
+    );
+};

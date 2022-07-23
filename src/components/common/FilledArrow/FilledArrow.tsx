@@ -1,3 +1,4 @@
+import React from 'react';
 import './FilledArrow.css';
 
 export const FilledArrow = () => {

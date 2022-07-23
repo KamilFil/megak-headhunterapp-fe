@@ -1,3 +1,4 @@
+import React from 'react';
 import './RedButton.css';
 
 interface Props {

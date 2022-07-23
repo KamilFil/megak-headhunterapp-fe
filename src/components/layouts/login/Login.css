@@ -1,6 +1,6 @@
 .login-wrap {
-    max-width: 400px;
     width: 350px;
+    max-width: 400px;
     position: absolute;
     top: 30vh;
     left: calc(50% - 175px);
