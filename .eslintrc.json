@@ -24,11 +24,17 @@
     }
   },
   "rules": {
+    "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
     "camelcase": "error",
     "spaced-comment": "error",
-    "quotes": ["error", "single"],
+    "quotes": [
+      "error",
+      "single"
+    ],
     "no-duplicate-imports": "error",
-    "newline-per-chained-call": [2]
+    "newline-per-chained-call": [
+      2
+    ]
   }
 }
