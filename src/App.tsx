@@ -1,10 +1,12 @@
 import React from 'react';
-import {MenuBar} from './components/common/MenuBar/MenuBar';
+import {NavBar} from './components/common/NavBar/NavBar';
+import {Login} from './components/layouts/login/Login';
 
 export const App = () => {
-  return (
-    <>
-        <MenuBar/>
-    </>
-  );
+    return (
+        <>
+            <NavBar/>
+            <Login/>
+        </>
+    );
 };

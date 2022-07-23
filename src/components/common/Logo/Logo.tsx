@@ -1,3 +1,4 @@
+import React from 'react';
 import logo from '../../../img/logo.webp';
 import './Logo.css';
 
@@ -7,5 +8,5 @@ interface Props {
 }
 
 export const Logo = ({width = '100px', margin = '0 auto 30px'}: Props) => {
-  return <img src={logo} alt='Logo bootcampu MegaK' style={{width: width, margin: margin}}/>;
+  return <img src={logo} alt='Logo bootcamp MegaK' style={{width: width, margin: margin}}/>;
 };
