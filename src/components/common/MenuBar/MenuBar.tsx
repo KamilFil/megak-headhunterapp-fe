@@ -1,5 +1,5 @@
 import {Logo} from '../Logo/Logo';
-import {PersonLabel} from '../PersonLabel/PersonLabel';
+import {PersonLabel} from '../../PersonLabel/PersonLabel';
 import './MenuBar.css';
 
 export const MenuBar = () => {

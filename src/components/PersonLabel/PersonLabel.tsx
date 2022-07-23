@@ -1,28 +1,33 @@
+import {useEffect, useState} from 'react';
+import {FilledArrow} from '../common/FilledArrow/FilledArrow';
+import {PersonMenu} from '../PersonMenu/PersonMenu';
 import womanImage from '../../img/woman-svgrepo-com.svg';
 import './PersonLabel.css';
-import {FilledArrow} from '../FilledArrow/FilledArrow';
-import {PersonMenu} from '../PersonMenu/PersonMenu';
-import {useState} from 'react';
 
 export const PersonLabel = () => {
-  const [visiblePersonMenu, setVisiblePersonMenu] = useState(false);
+    const [visiblePersonMenu, setVisiblePersonMenu] = useState(false);
 
-  const handleDropDownMenu = () => {
-    setVisiblePersonMenu(!visiblePersonMenu);
-    if (visiblePersonMenu) {
-      const element: HTMLDivElement | null = document.querySelector('.person-menu');
-      element?.focus();
-    }
-  };
+    useEffect(() => {
+        const personMenu: HTMLDivElement | null = document.querySelector('.person-menu');
+        const filledArrow: HTMLDivElement | null = document.querySelector('.filled-arrow');
+        const personLabel: HTMLDivElement | null = document.querySelector('.person-label--wrap');
+        personMenu?.classList.toggle('person-menu--visible');
+        filledArrow?.classList.toggle('filled-arrow--rotate');
+        personLabel?.classList.toggle('person-label--wrap--visible');
+    }, [visiblePersonMenu]);
 
-  return (
-      <div className='person-label' tabIndex={0} onBlur={() => setVisiblePersonMenu(false)}>
-        <div className='person-label--wrap' onClickCapture={handleDropDownMenu}>
-          <img src={womanImage} alt='Zdjęcie użytkownika'/>
-          <p>Anna Kowalska</p>
-          <FilledArrow/>
+    return (
+        <div className='person-label' tabIndex={0} onBlur={() => setVisiblePersonMenu(false)}>
+            <div
+                className='person-label--wrap'
+                onClick={() => {
+                    setVisiblePersonMenu(!visiblePersonMenu);
+                }}>
+                <img src={womanImage} alt='Zdjęcie użytkownika'/>
+                <p>Anna Kowalska</p>
+                <FilledArrow/>
+            </div>
+            <PersonMenu setVisible={setVisiblePersonMenu}/>
         </div>
-        {visiblePersonMenu && <PersonMenu setVisible={setVisiblePersonMenu}/>}
-      </div>
-  );
+    );
 };

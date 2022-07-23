@@ -1,4 +1,4 @@
-import logo from '../../img/logo.webp';
+import logo from '../../../img/logo.webp';
 import './Logo.css';
 
 interface Props {

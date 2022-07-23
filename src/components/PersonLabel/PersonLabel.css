@@ -1,15 +1,17 @@
-.person-label, .person-label--wrap, .person-label--wrap p, img {
+.person-label {
+    position: relative;
     background-color: #1e1e1f;
 }
 
-.person-label {
-    position: relative;
+.person-label--wrap, .person-label--wrap p, img, .filled-arrow {
+    background-color: inherit;
 }
 
 .person-label--wrap {
     display: flex;
-    align-items: center;
+    padding: 0 8px;
     height: 50px;
+    align-items: center;
     cursor: pointer;
 }
 
@@ -22,3 +24,15 @@
 .person-label--wrap p {
     margin-right: 14px;
 }
+
+.person-label--wrap--visible {
+    background-color: rgb(37, 37, 37);
+}
+
+.person-label--wrap:hover {
+    background-color: rgb(47, 47, 47);
+}
+
+
+
+
