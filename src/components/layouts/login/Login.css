@@ -6,12 +6,6 @@
     left: calc(50% - 175px);
 }
 
-img {
-    display: block;
-    width: 100px;
-    margin: 0 auto 30px;
-}
-
 @media (max-width: 425px) {
     .login-wrap {
         width: 250px;
