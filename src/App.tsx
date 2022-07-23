@@ -1,10 +1,10 @@
 import React from 'react';
-import {MenuBar} from './components/MenuBar/MenuBar';
+import {MenuBar} from './components/common/MenuBar/MenuBar';
 
 export const App = () => {
   return (
     <>
-      <MenuBar/>
+        <MenuBar/>
     </>
   );
 };

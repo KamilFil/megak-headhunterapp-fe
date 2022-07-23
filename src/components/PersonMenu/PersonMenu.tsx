@@ -6,13 +6,16 @@ interface Props {
 }
 
 export const PersonMenu = ({setVisible}: Props) => {
-  const handleLogout = () => {
-    setVisible(false);
-  };
+    const handleLogout = async () => {
+        setVisible(false);
+    };
 
-  return (
-      <div className='person-menu'>
-        <a onClick={handleLogout}>Wyloguj się</a>
-      </div>
-  );
+    return (
+        <div className='person-menu'>
+            <a onClick={handleLogout}>Wyloguj się</a>
+            <a onClick={handleLogout}>Wyloguj się</a>
+            <a onClick={handleLogout}>Wyloguj się</a>
+            <a onClick={handleLogout}>Wyloguj się</a>
+        </div>
+    );
 };
