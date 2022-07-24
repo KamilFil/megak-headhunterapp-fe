@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {FilledArrow} from '../common/FilledArrow/FilledArrow';
 import {UserMenu} from '../UserMenu/UserMenu';
-import womanImage from '../../img/woman-svgrepo-com.svg';
+import avatar from '../../img/avatar.jpg';
 import './UserLabel.css';
 
 export const UserLabel = () => {
@@ -23,7 +23,7 @@ export const UserLabel = () => {
                 onClick={() => {
                     setVisibleMenu(!visibleMenu);
                 }}>
-                <img src={womanImage} alt='Zdjęcie użytkownika'/>
+                <img src={avatar} alt='Zdjęcie użytkownika'/>
                 <p>Anna Kowalska</p>
                 <FilledArrow/>
             </div>
