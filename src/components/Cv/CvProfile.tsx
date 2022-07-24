@@ -12,26 +12,31 @@ export const CvProfile = (props: Props) => {
       {props.data.map((student) => (
         <div key={student.email} className='coursant-profile_item'>
           <img src='/img/logo-test.png' alt='ALT' />
-          <p>
+          <p className='coursant_profile-item_title'>
             {student.firstName} {student.lastName}
           </p>
           <div>
             <i></i>{' '}
-            <a href={`https://github.com/${student.githubUsername}`}>{student.githubUsername}</a>
+            <a
+              className='coursant_profile-item_link'
+              href={`https://github.com/${student.githubUsername}`}>
+              {student.githubUsername}
+            </a>
           </div>
           <div className='coursant-profile_item-contact'>
+            <i></i> <p>+48 {student.tel}</p>
             <i></i>
             <p>{student.email}</p>
-            <i></i> <p>+48 {student.tel}</p>
           </div>
           <div className='coursant-profile_item-bio'>
+            <p className='coursant-profile_item-bio-title'>O mnie:</p>
             <p>{student.bio}</p>
           </div>
           <div>
-            <p>Brak zainteresowania</p>
+            <p className='coursant-profile_item-action'>Brak zainteresowania</p>
           </div>
           <div>
-            <p>Zatrudniony</p>
+            <p className='coursant-profile_item-action'>Zatrudniony</p>
           </div>
         </div>
       ))}

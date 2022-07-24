@@ -2,16 +2,37 @@
     margin-left: 2px;
     /*background-color: red;*/
     flex-grow: 1;
+    line-height: 27px;
+}
+.coursant-degree p {
+    color: #CFCFCF;
+}
+
+.coursant-requirment p {
+    color: #CFCFCF;
+}
+
+.coursant-infobox p{
+    color:#F7F7F7;
 }
 
 .coursant-info h2 {
     display: block;
     padding: 20px 10px;
     width: 100%;
-    font-size: 16px;
-    background-color: #282828;
+    font-size: 20px;
+    background-color: #292A2B;
+}
+
+.coursant-info p {
+    font-size: 14px;
 }
 
 .coursant-info div div{
     padding: 10px 10px;
+}
+
+.coursant-projectbox_linklist-item {
+    color: #0B8BD4;
+    text-decoration: none;
 }

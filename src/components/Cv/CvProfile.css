@@ -1,14 +1,55 @@
 .coursant-profile {
-    flex-basis: 15%;
+    flex-basis: 250px;
     padding: 10px 8px;
     text-align: center;
-    background-color: #282828;
+    background-color: #292A2B;
+    line-height: 27px;
 }
 
 .coursant-profile img {
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+}
+
+.coursant_profile-item_title {
+    padding-top: 10px;
+    color: #f7f7f7;
+    font-size: 24px;
+}
+
+.coursant_profile-item_link {
+    font-size: 16px;
+    text-decoration: none;
+    color: #0B8BD4;
+}
+
+.coursant-profile_item-contact p {
+
+}
+
+
+.coursant-profile_item-contact {
+    text-align: left;
+    font-size: 16px;
+}
+
+.coursant-profile_item-bio {
+    text-align: left;
+    letter-spacing: 0px;
+}
+
+.coursant-profile_item-bio-title {
+    color: #4D4D4D;
+}
+
+.coursant-profile_item-action {
+    width: 200px;
+    height: 39px;
+    line-height: 39px;
+    /*padding: 13px 0px;*/;
+    vertical-align: center;
+    background-color: #E02735;
 }
 
 .coursant-profile_item {
