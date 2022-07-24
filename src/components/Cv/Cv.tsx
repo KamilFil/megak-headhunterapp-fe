@@ -1,33 +1,16 @@
 import React from 'react';
-
-interface StudentEntity {
-  email: string;
-  tel: number;
-  firstName: string;
-  lastName: string;
-  githubUsername: string;
-  portfolioUrls: string;
-  projectUrls: string;
-  bio: string;
-  expectedTypeWork: string;
-  targetWorkCity: string;
-  expectedContractType: string;
-  expectedSalary: number;
-  canTakeApprenticeship: string;
-  monthsOfCommercialExp: number;
-  education: string;
-  workExperience: string;
-  courses: string;
-  active: number;
-}
+import './Cv.css';
+import { StudentEntity } from 'types';
+import { CvProfile } from './CvProfile';
+import { CvInfo } from './CvInfo';
 
 export const Cv = () => {
   const student: StudentEntity[] = [
     {
       email: 'Student1',
       tel: 666777999,
-      firstName: 'ImieStudent',
-      lastName: 'Nazwisko Student',
+      firstName: 'Imie',
+      lastName: 'Nazwisko',
       githubUsername: 'GitHubName',
       portfolioUrls: 'GitHubName.pl',
       projectUrls: 'GitHubName.project.pl',
@@ -47,10 +30,9 @@ export const Cv = () => {
 
   return (
     <>
-      <section>
-        {student.map((el) => (
-          <p key={el.email}>{el.email}</p>
-        ))}
+      <section className='coursant'>
+        <CvProfile data={student} />
+        <CvInfo data={student} />
       </section>
     </>
   );
