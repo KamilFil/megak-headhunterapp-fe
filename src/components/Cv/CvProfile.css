@@ -1,0 +1,19 @@
+.coursant-profile {
+    flex-basis: 15%;
+    padding: 10px 8px;
+    text-align: center;
+    background-color: #282828;
+}
+
+.coursant-profile img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.coursant-profile_item {
+    padding: 10px 30px;
+}
+.coursant-profile_item div {
+    padding: 10px;
+}
