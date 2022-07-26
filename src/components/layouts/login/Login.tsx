@@ -1,12 +1,13 @@
-import { LoginForm } from '../../LoginForm/LoginForm';
+import React from 'react';
+import {LoginForm} from '../../LoginForm/LoginForm';
+import {Logo} from '../../common/Logo/Logo';
 import './Login.css';
-import logo from '../../../img/logo.webp';
 
 export const Login = () => {
-  return (
-    <div className='login-wrap'>
-      <img src={logo} alt='Logo bootcampu MegaK' />
-      <LoginForm />
-    </div>
-  );
+    return (
+        <div className='login-wrap'>
+            <Logo/>
+            <LoginForm/>
+        </div>
+    );
 };

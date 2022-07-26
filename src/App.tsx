@@ -1,10 +1,12 @@
 import React from 'react';
-import { Login } from './components/layouts/login/Login';
+import {NavBar} from './components/common/NavBar/NavBar';
+import {Login} from './components/layouts/login/Login';
 
 export const App = () => {
-  return (
-    <>
-      <Login />
-    </>
-  );
+    return (
+        <>
+            <NavBar/>
+            <Login/>
+        </>
+    );
 };
