@@ -15,21 +15,26 @@ export const CvProfile = (props: Props) => {
           <p className='coursant_profile-item_title'>
             {student.firstName} {student.lastName}
           </p>
-          <div>
-            <i></i>{' '}
+          <div className='coursant_profile-item_github'>
+            <i className='fa-brands fa-github'></i>
             <a
-              className='coursant_profile-item_link'
+              className='coursant_profile-item_github-link'
               href={`https://github.com/${student.githubUsername}`}>
               {student.githubUsername}
             </a>
           </div>
           <div className='coursant-profile_item-contact'>
-            <i></i> <p>+48 {student.tel}</p>
-            <i></i>
-            <p>{student.email}</p>
+            <div className='coursant-profile_item-contact_mail'>
+              <i className='fa-solid fa-phone'></i>
+              <p>+48 {student.tel}</p>
+            </div>
+            <div className='coursant-profile_item-contact_phone'>
+              <i className='fa-solid fa-envelope'></i>
+              <p>{student.email}</p>
+            </div>
           </div>
           <div className='coursant-profile_item-bio'>
-            <p className='coursant-profile_item-bio-title'>O mnie:</p>
+            <p className='coursant-profile-item_bio-title'>O mnie:</p>
             <p>{student.bio}</p>
           </div>
           <div>

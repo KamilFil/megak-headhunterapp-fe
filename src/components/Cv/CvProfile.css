@@ -1,9 +1,12 @@
 .coursant-profile {
-    flex-basis: 250px;
-    padding: 10px 8px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    padding: 16px 30px;
     text-align: center;
     background-color: #292A2B;
-    line-height: 27px;
+    color: #F7F7F7;
+
 }
 
 .coursant-profile img {
@@ -12,49 +15,69 @@
     border-radius: 50%;
 }
 
+
+.coursant-profile_item div {
+    padding: 8px 0px;
+}
+
 .coursant_profile-item_title {
-    padding-top: 10px;
-    color: #f7f7f7;
+    padding-top: 12px;
     font-size: 24px;
 }
 
-.coursant_profile-item_link {
+.coursant_profile-item_github-link {
     font-size: 16px;
     text-decoration: none;
     color: #0B8BD4;
 }
 
-.coursant-profile_item-contact p {
-
+.coursant_profile-item_github {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.fa-github {
+    margin-right: 6px;
+    font-size: 21px;
+    color: #0B8BD4;
+}
 
 .coursant-profile_item-contact {
-    text-align: left;
     font-size: 16px;
+}
+
+.coursant-profile_item-contact i {
+    margin-right: 8px;
+    color: #4D4D4D;
+}
+
+.coursant-profile_item-contact div {
+    display: flex;
+    align-items: center;
+    padding: 4px 0px;
 }
 
 .coursant-profile_item-bio {
     text-align: left;
+    line-height: 27px;
     letter-spacing: 0px;
+
 }
 
-.coursant-profile_item-bio-title {
+.coursant-profile-item_bio-title {
     color: #4D4D4D;
+    font-weight: 700;
+
 }
 
 .coursant-profile_item-action {
     width: 200px;
     height: 39px;
     line-height: 39px;
-    /*padding: 13px 0px;*/;
     vertical-align: center;
     background-color: #E02735;
 }
 
-.coursant-profile_item {
-    padding: 10px 30px;
-}
-.coursant-profile_item div {
-    padding: 10px;
-}
+
+

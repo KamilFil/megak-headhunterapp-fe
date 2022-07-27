@@ -16,8 +16,13 @@ export const CvInfo = (props: Props) => {
             <div className='coursant_degree-item'>
               <p className='coursant_degree_item-title'>Oceny przejścia kursu:</p>
               <div className='coursant_degree_item-stars'>
-                <p>5/5</p>
-                <i>stars</i>
+                <p>{student.expectedSalary}/5</p>
+
+                <i className='fa-solid fa-star active'></i>
+                <i className='fa-solid fa-star'></i>
+                <i className='fa-solid fa-star'></i>
+                <i className='fa-solid fa-star'></i>
+                <i className='fa-solid fa-star'></i>
               </div>
             </div>
           </div>

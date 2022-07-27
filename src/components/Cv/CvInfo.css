@@ -36,3 +36,7 @@
     color: #0B8BD4;
     text-decoration: none;
 }
+
+i.fa-solid.fa-star.active {
+    color:red;
+}
