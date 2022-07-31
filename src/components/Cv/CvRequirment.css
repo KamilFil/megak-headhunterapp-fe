@@ -1,0 +1,24 @@
+.coursant-requirment p {
+    color: #CFCFCF;
+}
+
+.coursant_requirment-container {
+display: flex;
+
+}
+
+.coursant_requirment-item {
+    flex-basis: 20%;
+    display: flex;
+    margin-right: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #292A2B;
+}
+
+p.coursant_requirment_item-answer {
+    padding: 10px 0 10px;
+    font-size: 16px;
+    color: #F7F7F7;
+    font-weight: bold;
+}

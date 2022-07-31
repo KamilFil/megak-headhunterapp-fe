@@ -16,7 +16,7 @@ h2 {
     background-color: #232323;
     color: white;
     width: 80%;
-    height: 100vh;
+    /*height: 100vh;*/
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
