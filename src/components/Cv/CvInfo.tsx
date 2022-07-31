@@ -3,7 +3,7 @@ import { StudentEntity } from 'types';
 import './CvInfo.css';
 import { CvRating } from './CvRating';
 import { CvRequirment } from './CvRequirment';
-import { CvInfoBox } from './CvInfoBox';
+import { AnswerBox } from '../common/AnswerBox';
 import { CvProjectBox } from './CvProjectBox';
 
 interface Props {
@@ -17,12 +17,12 @@ export const CvInfo = (props: Props) => {
         <div key={student.email} className='coursant-info'>
           <CvRating data={props.data} title='Oceny' />
           <CvRequirment data={props.data} title='Oczekiwania w stosunku do pracy' />
-          <CvInfoBox title='Edukacja' answer={student.education} />
-          <CvInfoBox title='Kursy' answer={student.courses} />
-          <CvInfoBox title='Doświadczenie zawodowe' answer={student.workExperience} />
-          <CvProjectBox title='Portfolio' data={props.data} />
-          <CvProjectBox title='Projekt w zespole Scrumowym' data={props.data} />
-          <CvProjectBox title='Projekt na zaliczenie' data={props.data} />
+          <AnswerBox title='Edukacja' answer={student.education} />
+          <AnswerBox title='Kursy' answer={student.courses} />
+          <AnswerBox title='Doświadczenie zawodowe' answer={student.workExperience} />
+          <CvProjectBox title='Portfolio' data={student.projectUrls} />
+          <CvProjectBox title='Projekt w zespole Scrumowym' data={student.portfolioUrls} />
+          <CvProjectBox title='Projekt na zaliczenie' data={student.projectUrls} />
         </div>
       ))}
     </>

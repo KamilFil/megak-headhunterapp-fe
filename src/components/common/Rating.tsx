@@ -36,9 +36,9 @@ export const Rating = (props: Props) => {
   }
 
   return (
-    <div className='coursant_rating-item'>
-      <p className='coursant_rating_item-title'>{props.ratingTitle}</p>
-      <div className='coursant_rating_item-stars'>
+    <div className='rating-item'>
+      <p className='rating_item-title'>{props.ratingTitle}</p>
+      <div className='rating_item-stars'>
         <p>
           {props.valueRating}/{props.quantityStars}
         </p>

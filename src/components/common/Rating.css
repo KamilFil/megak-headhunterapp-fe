@@ -1,22 +1,30 @@
-
-.coursant_rating-item {
-    /*flex-basis: 163px;*/
-    margin-right: 60px;
+.rating-item {
     display: flex;
     flex-direction: column;
-  justify-content: flex-end;
+    justify-content: flex-end;
 
 }
-.coursant_rating_item-stars {
+
+@media only screen and (max-width: 1680px) {
+    .rating-item  {
+        margin-top: 20px;
+        flex-basis: 35%;
+    }
+}
+@media only screen and (max-width: 1020px) {
+    .rating-item  {
+        flex-basis: 100%;
+    }
+}
+
+.rating_item-stars {
     display: flex;
 }
 
-
-.coursant_rating_item-stars p {
+.rating_item-stars p {
     font-size: 18px;
     margin-right: 10px;
 }
-
 
 i.fa-solid.fa-star {
     font-size: 19px;

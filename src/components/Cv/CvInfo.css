@@ -1,19 +1,9 @@
 .coursant-info {
     margin-left: 2px;
-    /*background-color: red;*/
-    flex-grow: 1;
     line-height: 27px;
-}
-.coursant-degree p {
-    color: #CFCFCF;
-}
-
-.coursant-infobox p{
-    color:#F7F7F7;
 }
 
 .coursant-info h2 {
-    display: block;
     padding: 20px 20px;
     font-size: 20px;
     background-color: #292A2B;
@@ -27,8 +17,5 @@
     padding: 20px 20px;
 }
 
-.coursant-projectbox_linklist-item {
-    color: #0B8BD4;
-    text-decoration: none;
-}
+
 

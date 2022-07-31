@@ -30,7 +30,7 @@ export const CvProfile = (props: Props) => {
             </div>
             <div className='coursant-profile_item-contact_phone'>
               <i className='fa-solid fa-envelope'></i>
-              <a href={`tel:${student.email}`}>{student.email}</a>
+              <a href={`mailto:${student.email}`}>{student.email}</a>
             </div>
           </div>
           <div className='coursant-profile_item-bio'>

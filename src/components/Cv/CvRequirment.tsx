@@ -1,6 +1,7 @@
 import { StudentEntity } from 'types';
-import { CvRequirmentItem } from './CvRequirmentItem';
+
 import './CvRequirment.css';
+import { QABox } from '../common/QABox';
 
 interface Props {
   title: string;
@@ -13,27 +14,21 @@ export const CvRequirment = (props: Props) => {
       <h2 className='coursant_requirment-title'>{props.title}</h2>
       {props.data.map((student) => (
         <div key={student.email} className='coursant_requirment-container'>
-          <CvRequirmentItem
-            question='Preferowane miejsce pracy'
-            answer={student.expectedTypeWork}
-          />
-          <CvRequirmentItem
+          <QABox question='Preferowane miejsce pracy' answer={student.expectedTypeWork} />
+          <QABox
             question='Docelowe miasto, gdzie chce pracować kandydat'
             answer={student.targetWorkCity}
           />
-          <CvRequirmentItem
-            question='Oczekiwany typ kontraktu'
-            answer={student.expectedContractType}
-          />
-          <CvRequirmentItem
+          <QABox question='Oczekiwany typ kontraktu' answer={student.expectedContractType} />
+          <QABox
             question='Oczekiwane wynagrodzenie miesięczne netto'
             answer={`${student.expectedSalary} zł`}
           />
-          <CvRequirmentItem
+          <QABox
             question='Zgoda na odbycie bezpłatnych praktyk/stażu na początek'
-            answer={student.canTakeApprenticeship}
+            answer={student.canTakeApprenticeship ? 'Tak' : 'nie'}
           />
-          <CvRequirmentItem
+          <QABox
             question='Komercyjne doświadczenie w programowaniu'
             answer={`${student.monthsOfCommercialExp} miesięcy`}
           />

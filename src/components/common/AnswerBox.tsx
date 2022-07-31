@@ -1,9 +1,9 @@
 interface Props {
   title: string;
-  answer: string;
+  answer: string | null;
 }
 
-export const CvInfoBox = (props: Props) => {
+export const AnswerBox = (props: Props) => {
   return (
     <div className='coursant-infobox'>
       <h2 className='coursant_infobox-title'>{props.title}</h2>
