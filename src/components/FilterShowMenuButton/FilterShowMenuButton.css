@@ -1,0 +1,41 @@
+.filter-show-menu-button--wrap {
+    background-color: rgba(34, 34, 36, 0);
+    position: relative;
+}
+
+.filter-show-menu-button {
+    height: 36px;
+    border: none;
+    padding: 8px 10px 8px 30px;
+    background-color: #222224;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.filter-show-menu-button:hover {
+    background-color: rgb(48, 48, 48);
+}
+
+.filter-show-menu-button:active {
+    transform: scale(.98)
+}
+
+.filter-show-menu-button:active ~ .filter-show-menu-button--img {
+    transform: scale(.9)
+}
+
+.filter-show-menu-button--img {
+    width: 13px;
+    background-color: rgba(34, 34, 36, 0);
+    position: absolute;
+    top: 32%;
+    left: 10%;
+
+}
+
+@media (max-width: 425px) {
+    .filter-show-menu-button {
+        letter-spacing: normal;
+    }
+}

@@ -1,0 +1,109 @@
+.list-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.list-footer--pagination {
+    display: flex;
+    margin-right: 18px;
+    margin-bottom: 90px;
+    position: relative;
+}
+
+.list-footer--pagination-text {
+    margin-right: 8px;
+}
+
+.list-footer--pagination-input {
+    width: 24px;
+    height: 22px;
+    line-height: 20px;
+    padding-left: 2px;
+    position: relative;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+
+.list-footer--pagination-input:hover {
+    background-color: #c2baba;
+}
+
+.list-footer--pagination-input:active {
+    transform: scale(0.96);
+}
+
+.list-footer--pagination-input__text {
+    color: #222224;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.list-footer--pagination-input__arrow {
+    position: absolute;
+    top: 8px;
+    left: 14px;
+    border-top: 7px solid #333333;
+}
+
+.list-footer--page {
+    display: flex;
+}
+
+.list-footer--page-text {
+    margin-right: 8px;
+}
+
+.list-footer--page-back {
+    width: 22px;
+    height: 22px;
+    margin-right: 4px;
+    background-color: #cfcfcf;
+    position: relative;
+    cursor: pointer;
+}
+
+.list-footer--page-back__arrow {
+    transform: scale(0.5) rotate(-45deg);
+    background-color: inherit;
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    z-index: 10;
+    border-left: 3px solid #333333;
+    border-top: 3px solid #333333;
+}
+
+.list-footer--page-next {
+    width: 22px;
+    height: 22px;
+    background-color: #cfcfcf;
+    position: relative;
+    cursor: pointer;
+}
+
+.list-footer--page-back:hover, .list-footer--page-next:hover {
+    background-color: #c2baba;
+}
+
+.list-footer--page-back:active, .list-footer--page-next:active {
+    transform: scale(0.96);
+}
+
+.list-footer--page-next__arrow {
+    transform: scale(0.5) rotate(135deg);
+    background-color: inherit;
+    position: absolute;
+    top: 4px;
+    left: 3px;
+    z-index: 10;
+    border-left: 3px solid #333333;
+    border-top: 3px solid #333333;
+}
+
+.list-footer--page--deactivate {
+    background-color: #666666;
+    pointer-events: none;
+}
