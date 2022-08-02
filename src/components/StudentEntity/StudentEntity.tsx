@@ -17,12 +17,21 @@ export const StudentEntity = ({name, id}: Props) => {
     arrow?.classList.toggle('unfilled-arrow--rotate');
   };
 
+  const handleClick = () => {
+    console.log('CLICK');
+  };
+
   return (
       <div className='student-entity'>
         <div className='student-entity--heading'>
           <p className='student-entity--heading-name'>{name}</p>
           <div className='student-entity--heading-marks'>
-            <RedButton name='Zarezerwuj' type='button' additionalClass='red-button--smaller'/>
+            <RedButton
+                name='Zarezerwuj'
+                type='button'
+                additionalClass='red-button--smaller'
+                handleClick={handleClick}
+            />
             <div
                 className={`student-entity--heading-marks__arrow-wrap student-entity--heading-marks__arrow-wrap${id}`}
                 onClick={showHide}>

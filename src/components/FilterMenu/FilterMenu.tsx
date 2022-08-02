@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {TealButton} from '../common/TealButton/TealButton';
 import {FilterStars} from '../FilterStars/FilterStars';
 import {FilterForm, RatingFilter} from '../../types/filter';
@@ -9,10 +9,12 @@ import {FilterUnpaidInternship} from '../FilterUnpaidInternship/FilterUnpaidInte
 import {FilterExp} from '../FilterExp/FilterExp';
 import {RedButton} from '../common/RedButton/RedButton';
 import {BlackButton} from '../common/BlackButton/BlackButton';
+import {FilterFormContext} from '../../context/FilterFormContext';
 import './FilterMenu.css';
 
 export const FilterMenu = () => {
   const defaultFilterFormObj: FilterForm = {
+    visibleFilterMenu: false,
     generalRating: 0,
     activityRating: 0,
     ownProjectRating: 0,
@@ -29,6 +31,8 @@ export const FilterMenu = () => {
     monthsExperience: undefined,
   };
 
+  const {filterForm, setFilterForm} = useContext(FilterFormContext);
+
   const ratingFilters: RatingFilter[] = [
     {filterField: 'generalRating', filterSubject: 'Ocena przejścia kursu'},
     {filterField: 'activityRating', filterSubject: 'Ocena aktywności i zaangażowania na kursie'},
@@ -36,14 +40,26 @@ export const FilterMenu = () => {
     {filterField: 'teamworkRating', filterSubject: 'Ocena pracy w zespole Scrum'},
   ];
 
-  const [filterForm, setFilterForm] = useState<FilterForm>(defaultFilterFormObj);
-
   const refreshForm = () => {
-    setFilterForm(defaultFilterFormObj);
+    setFilterForm({...defaultFilterFormObj, visibleFilterMenu: true});
   };
 
+  const hideFilterMenu = () => {
+    setFilterForm({
+      ...filterForm,
+      visibleFilterMenu: false,
+    });
+  };
+
+  useEffect(() => {
+    const body = document.querySelector('body');
+    const background = document.querySelector('.filter-wrap');
+    background?.classList.toggle('focus-filter');
+    body?.classList.toggle('focus-filter-body');
+  }, [filterForm.visibleFilterMenu]);
+
   return (
-      <div className='filter-menu'>
+      <div className={`filter-menu${filterForm.visibleFilterMenu ? ' filter-menu--visible' : ''}`}>
         <div className='filter-menu--heading'>
           <h3 className='filter-menu--heading-text'>Filtrowanie</h3>
           <TealButton type='button' name='Wyczyść wszystkie' handleClick={refreshForm}/>
@@ -67,7 +83,7 @@ export const FilterMenu = () => {
           <FilterExp filterForm={filterForm} setFilterForm={setFilterForm}/>
           <div className='filter-menu--footer'>
             <BlackButton name='Anuluj' type='button'/>
-            <RedButton name='Pokaż wyniki' type='button'/>
+            <RedButton name='Pokaż wyniki' type='button' handleClick={hideFilterMenu}/>
           </div>
         </form>
       </div>

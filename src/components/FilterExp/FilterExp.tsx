@@ -1,7 +1,7 @@
-import React, {ChangeEvent, FormEvent} from 'react';
+import React, {ChangeEvent} from 'react';
 import {FilledArrow} from '../FilledArrow/FilledArrow';
-import './FilterExp.css';
 import {FilterForm} from '../../types/filter';
+import './FilterExp.css';
 
 interface Props {
   filterForm: FilterForm;
@@ -9,22 +9,29 @@ interface Props {
 }
 
 export const FilterExp = ({filterForm, setFilterForm}: Props) => {
+  const max = 120;
+
   const setExp = (e: ChangeEvent<HTMLInputElement>) => {
-    if (Number(e.target.value) === -1) {
+    if (Number(e.target.value) === -1 || e.target.value === '') {
       setFilterForm({...filterForm, monthsExperience: undefined});
+      return;
+    }
+    if (isNaN(Number(e.target.value))) {
+      return;
     } else {
-      setFilterForm({...filterForm, monthsExperience: Number(e.target.value)});
+      const newMonthsExperience = Number(e.target.value) >= max ? max : Number(e.target.value);
+      setFilterForm({...filterForm, monthsExperience: newMonthsExperience});
     }
   };
 
-  const incExp = (e: FormEvent<HTMLDivElement>) => {
+  const incExp = () => {
     const oldExp = filterForm.monthsExperience !== undefined ? filterForm.monthsExperience : -1;
-    if (oldExp < 120) {
+    if (oldExp < max) {
       setFilterForm({...filterForm, monthsExperience: oldExp + 1});
     }
   };
 
-  const decExp = (e: FormEvent<HTMLDivElement>) => {
+  const decExp = () => {
     const oldExp = filterForm.monthsExperience ? filterForm.monthsExperience : 0;
     if (oldExp > 0) {
       setFilterForm({...filterForm, monthsExperience: oldExp - 1});
@@ -41,10 +48,8 @@ export const FilterExp = ({filterForm, setFilterForm}: Props) => {
         <div className='filter-menu--form-label__wrap' onClick={(e) => e.preventDefault()}>
           <input
               className='filter-menu--form-label__wrap-input'
-              type='number'
-              placeholder='0 miesięcy'
-              min={-1}
-              max={120}
+              type='text'
+              placeholder='np. 5 miesięcy'
               value={filterForm.monthsExperience !== undefined ? filterForm.monthsExperience : ''}
               onChange={setExp}
           />

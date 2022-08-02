@@ -1,4 +1,4 @@
-input {
+.login-input {
     height: 40px;
     width: 100%;
     padding: 8px;
@@ -10,10 +10,10 @@ input {
     transition: background-color 0.5s;
 }
 
-input:hover {
+.login-input:hover {
     background-color: rgb(48, 48, 48);
 }
 
-input:focus {
+.login-input:focus {
     background-color: rgb(62, 62, 62);
 }

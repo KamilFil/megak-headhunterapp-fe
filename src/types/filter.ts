@@ -11,6 +11,7 @@ export type AgreementForUnpaidInternship = boolean;
 export type MonthsExperience = number;
 
 export interface FilterForm {
+  visibleFilterMenu: boolean;
   generalRating: Rating | undefined;
   activityRating: Rating | undefined;
   ownProjectRating: Rating | undefined;

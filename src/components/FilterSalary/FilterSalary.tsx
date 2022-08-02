@@ -8,13 +8,18 @@ interface Props {
 }
 
 export const FilterSalary = ({filterForm, setFilterForm}: Props) => {
+  const max = 50000;
   const setMinNetSalary = (e: ChangeEvent<HTMLInputElement>) => {
-    if (Number(e.target.value) === -1) {
+    if (Number(e.target.value) <= 0) {
       setFilterForm({...filterForm, expectedMinNetSalary: undefined});
     } else if (
         Number(e.target.value) <= Number(filterForm.expectedMaxNetSalary) ||
         filterForm.expectedMaxNetSalary === undefined
     ) {
+      if (Number(e.target.value) > max) {
+        setFilterForm({...filterForm, expectedMinNetSalary: max});
+        return;
+      }
       setFilterForm({...filterForm, expectedMinNetSalary: Number(e.target.value)});
     } else {
       setFilterForm({...filterForm, expectedMinNetSalary: filterForm.expectedMaxNetSalary});
@@ -22,12 +27,16 @@ export const FilterSalary = ({filterForm, setFilterForm}: Props) => {
   };
 
   const setMaxNetSalary = (e: ChangeEvent<HTMLInputElement>) => {
-    if (Number(e.target.value) === -1) {
+    if (Number(e.target.value) <= 0) {
       setFilterForm({...filterForm, expectedMaxNetSalary: undefined});
     } else if (
         Number(e.target.value) >= Number(filterForm.expectedMinNetSalary) ||
         filterForm.expectedMinNetSalary === undefined
     ) {
+      if (Number(e.target.value) > max) {
+        setFilterForm({...filterForm, expectedMaxNetSalary: max});
+        return;
+      }
       setFilterForm({...filterForm, expectedMaxNetSalary: Number(e.target.value)});
     } else {
       setFilterForm({...filterForm, expectedMaxNetSalary: filterForm.expectedMinNetSalary});
@@ -47,6 +56,7 @@ export const FilterSalary = ({filterForm, setFilterForm}: Props) => {
                 type='number'
                 placeholder='np. 1000 zł'
                 min={-1}
+                max={50000}
                 value={
                   filterForm.expectedMinNetSalary !== undefined ? filterForm.expectedMinNetSalary : ''
                 }
@@ -60,7 +70,7 @@ export const FilterSalary = ({filterForm, setFilterForm}: Props) => {
                 type='number'
                 placeholder='np. 10000 zł'
                 min={-1}
-                max={15000}
+                max={50000}
                 value={
                   filterForm.expectedMaxNetSalary !== undefined ? filterForm.expectedMaxNetSalary : ''
                 }
