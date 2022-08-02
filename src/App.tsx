@@ -3,12 +3,14 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { Students } from './components/layouts/Students/Students';
 import { Login } from './components/layouts/Login/Login';
 import { Cv } from './components/layouts/Cv/Cv';
+import {Admin} from './components/Admin/Admin';
 
 export const App = () => {
   return (
     <Routes>
       <Route path='/login' element={<Login />} />
       <Route path='/students' element={<Students />} />
+      <Route path='/admin' element={<Admin />} />
       <Route path='/cv' element={<Cv />} />
       <Route path='/' element={<Navigate to='/students' />} />
     </Routes>
