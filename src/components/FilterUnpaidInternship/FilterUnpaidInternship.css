@@ -1,0 +1,40 @@
+.filter-menu--form-label {
+}
+
+.filter-menu--form-label__text {
+}
+
+.filter-menu--form-label__internship {
+    margin-top: 6px;
+}
+
+.filter-menu--form-label__internship-label {
+    display: flex;
+    width: 50px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.filter-menu--form-label__internship-label__input {
+    height: 18px;
+    width: 18px;
+    margin-right: 6px;
+    border: 1px solid #292a2b;
+    border-radius: 50%;
+    position: relative;
+}
+
+.filter-menu--form-label__internship-label__input-checkmark {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    background-color: #e02735;
+}
+
+.filter-menu--form-label__internship-label__text {
+}
+
+

@@ -1,0 +1,49 @@
+.filter-menu {
+    width: 500px;
+    padding: 20px 16px;
+    background-color: #0a0a0a;
+    position: absolute;
+    top: 2%;
+    left: calc(50% - 250px);
+    transform-origin: top center;
+    transform: scale(0.94);
+}
+
+.filter-menu--heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 6px;
+}
+
+.filter-menu--heading-text {
+    font-size: 1.2rem;
+}
+
+.filter-menu--form-label__text {
+    font-size: 0.9rem;
+    padding: 10px 0 0;
+}
+
+.filter-menu--footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .filter-menu {
+        width: 460px;
+        left: calc(50% - 230px);
+        transform: scale(0.85);
+    }
+}
+
+@media (max-width: 425px) {
+    .filter-menu {
+        transform: scale(0.65);
+
+    }
+}

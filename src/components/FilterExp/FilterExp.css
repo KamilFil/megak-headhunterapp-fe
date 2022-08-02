@@ -1,0 +1,38 @@
+.filter-menu--form-label__wrap {
+    position: relative;
+}
+
+.filter-menu--form-label__wrap-input {
+    width: 140px;
+    padding: 6px 28px 6px 12px;
+    margin-top: 6px;
+    outline: none;
+    border: none;
+    background-color: #292a2b;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.filter-menu--form-label__wrap-input:focus, .filter-menu--form-label__wrap-input:focus ~ .filter-menu--form-label__wrap-input-wrap-top, .filter-menu--form-label__wrap-input:focus ~ .filter-menu--form-label__wrap-input-wrap-bottom {
+    background-color: rgb(62, 62, 62);
+}
+
+.filter-menu--form-label__wrap-input-wrap-top {
+    padding: 2px 6px;
+    position: absolute;
+    top: 8px;
+    left: 118px;
+    transform: rotate(180deg);
+    background-color: #292a2b;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.filter-menu--form-label__wrap-input-wrap-bottom {
+    padding: 2px 6px;
+    position: absolute;
+    top: 22px;
+    left: 118px;
+    background-color: #292a2b;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
