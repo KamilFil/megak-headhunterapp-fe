@@ -1,5 +1,10 @@
+import React from 'react';
+import './AdminForm.css'
+
 export const AdminForm = () => {
     return (
-        <div>Form</div>
+        <div>
+            <input/>
+        </div>
     )
 }
