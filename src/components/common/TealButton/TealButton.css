@@ -1,0 +1,16 @@
+.teal-button {
+    padding: 8px;
+    background-color: #172a35;
+    font-weight: 200;
+    border: none;
+    font-size: 0.8rem;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.teal-button:hover {
+    background-color: #1c3649;
+}
+
+.teal-button:active {
+    transform: scale(.98)
+}
