@@ -1,0 +1,32 @@
+.filter-menu--form-label__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 8px;
+    background-color: #292a2b;
+    margin-right: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-menu--form-label__button--active {
+    background-color: #e02735;
+}
+
+.filter-menu--form-label__button:active {
+    transform: scale(.98);
+}
+
+.filter-menu--form-label__button-rating {
+    font-size: 12px;
+}
+
+.filter-menu--form-label__button-star {
+    font-size: 12px;
+    padding-left: 4px;
+    color: #e02735;
+}
+
+.filter-menu--form-label__button--active .filter-menu--form-label__button-star {
+    color: #f7f7f7;
+}
