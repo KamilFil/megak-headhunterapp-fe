@@ -1,0 +1,39 @@
+.qa-box_item {
+    display: flex;
+    flex-basis: 16%;
+    flex-grow: 1;
+    padding: 0 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #292A2B;
+}
+
+@media only screen and (max-width: 1680px) {
+    .qa-box_item  {
+        margin-top: 20px;
+        flex-basis: 30%;
+    }
+}
+
+@media only screen and (max-width: 1160px) {
+    .qa-box_item  {
+        flex-basis: 45%;
+    }
+}
+
+@media only screen and (max-width: 885px) {
+    .qa-box_item  {
+        border-top: 1px solid #292A2B;
+        border-right: none;
+        margin-top: 10px;
+        padding: 8px 0;
+        flex-basis: 100%;
+    }
+}
+
+p.qa-box_item-answer {
+    padding: 10px 0 10px;
+    font-size: 16px;
+    color: #F7F7F7;
+    font-weight: bold;
+}

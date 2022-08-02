@@ -1,0 +1,9 @@
+.coursant-requirment p {
+    color: #CFCFCF;
+}
+
+.coursant_requirment-container {
+display: flex;
+    flex-wrap: wrap;
+}
+
