@@ -11,7 +11,14 @@ export const CvProfile = (props: Props) => {
     <div className='coursant-profile'>
       {props.data.map((student) => (
         <div key={student.email} className='coursant-profile_item'>
-          <img src='/img/logo-test.png' alt='ALT' />
+          <img
+            src={
+              student.githubUsername.length > 1
+                ? `https://github.com/${student.githubUsername}.png`
+                : 'img/logo-test.png'
+            }
+            alt='ALT'
+          />
           <p className='coursant_profile-item_title'>
             {student.firstName} {student.lastName}
           </p>

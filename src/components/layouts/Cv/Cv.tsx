@@ -12,7 +12,7 @@ export const Cv = () => {
       tel: '666777999',
       firstName: 'Kamil',
       lastName: 'Kamil',
-      githubUsername: 'kamilgit',
+      githubUsername: 'Ami777',
       portfolioUrls: ['GitHubName.pl', 'Kamilbedzieprojekt'],
       projectUrls: ['ProjektZG14najlepszyTeamEver.pl', 'ProjektZG14-Apkaza1mln.pl'],
       bio: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo',
