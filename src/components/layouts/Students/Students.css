@@ -1,0 +1,10 @@
+.students-wrap {
+    width: 72vw;
+    margin: 0 auto;
+}
+
+@media (max-width: 425px) {
+    .students-wrap {
+        width: calc(100vw - 10px);
+    }
+}
