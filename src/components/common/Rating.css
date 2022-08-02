@@ -1,0 +1,38 @@
+.rating-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+}
+
+@media only screen and (max-width: 1680px) {
+    .rating-item  {
+        margin-top: 20px;
+        flex-basis: 35%;
+    }
+}
+@media only screen and (max-width: 1020px) {
+    .rating-item  {
+        flex-basis: 100%;
+    }
+}
+
+.rating_item-stars {
+    display: flex;
+}
+
+.rating_item-stars p {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+i.fa-solid.fa-star {
+    font-size: 19px;
+    color: #4D4D4D;
+}
+
+i.fa-solid.fa-star.active {
+    color:#E02735;
+}
+
+
