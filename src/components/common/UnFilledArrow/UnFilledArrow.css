@@ -1,0 +1,15 @@
+.unfilled-arrow {
+    width: 14px;
+    height: 14px;
+    background-color: inherit;
+    border-left: 3px solid #666666;
+    border-top: 3px solid #666666;
+    transform-origin: center center;
+    transition: transform .15s ease-in-out;
+    transform: rotate(225deg);
+    cursor: pointer;
+}
+
+.unfilled-arrow--rotate {
+    transform: rotate(45deg);
+}

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {FilledArrow} from '../common/FilledArrow/FilledArrow';
+import {FilledArrow} from '../FilledArrow/FilledArrow';
 import {UserMenu} from '../UserMenu/UserMenu';
 import avatar from '../../img/avatar.jpg';
 import './UserLabel.css';

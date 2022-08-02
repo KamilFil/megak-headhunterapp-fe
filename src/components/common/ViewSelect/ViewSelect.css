@@ -1,0 +1,35 @@
+.view-select--wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #292a2b;
+}
+
+.view-select {
+    display: block;
+    padding: 20px 30px;
+    background-color: #292a2b;
+    cursor: pointer;
+    border-bottom: 3px solid #292a2b;
+    text-align: center;
+    transition: border 0.3s ease-in-out, background-color 0.3s;
+}
+
+.view-select:hover {
+    background-color: rgb(48, 48, 48);
+}
+
+.view-select:active {
+    background-color: rgb(62, 62, 62);
+}
+
+.view-select--active {
+    border-bottom: 3px solid #e02735;
+}
+
+@media (max-width: 425px) {
+    .view-select {
+        font-size: 12px;
+    }
+}
+
