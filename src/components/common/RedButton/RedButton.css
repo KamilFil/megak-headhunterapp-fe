@@ -3,15 +3,16 @@ button {
     background-color: #e02735;
     font-weight: 200;
     border: none;
+    font-size: 0.9rem;
     transition: background-color 0.2s, transform 0.1s;
 }
 
-button:hover {
+.red-button:hover {
     background-color: #cd0d1c;
     cursor: pointer;
 }
 
-button:active {
+.red-button:active {
     transform: scale(.98)
 }
 
