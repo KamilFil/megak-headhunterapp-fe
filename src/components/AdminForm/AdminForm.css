@@ -1,0 +1,38 @@
+form {
+    display: flex;
+    flex-direction: column;
+    column-gap: 30px;
+}
+
+h1 {
+    color: #d0c8c8;
+    margin-bottom: 12px;
+    font-size: 22px;
+    font-family: Roboto;
+}
+
+input {
+    height: 40px;
+    width: 100%;
+    padding: 8px;
+    margin: 0 auto 14px;
+    border: 0;
+    background-color: #292a2b;
+    align-items: flex-end;
+    outline: none;
+    transition: background-color 0.5s;
+}
+
+input:hover {
+    background-color: rgb(48, 48, 48);
+}
+
+input:focus {
+    background-color: rgb(62, 62, 62);
+}
+
+.submit-wrap {
+    display: flex;
+    justify-content: space-between;
+    cursor: default;
+}

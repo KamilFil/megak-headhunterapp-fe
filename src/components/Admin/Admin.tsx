@@ -4,8 +4,8 @@ import './Admin.css'
 
 export const Admin = () => {
     return (
-        <>
+        <div className='admin-wrap'>
             <AdminForm/>
-        </>
+        </div>
     )
 }
