@@ -3,6 +3,7 @@ import './Cv.css';
 import { StudentEntity } from 'types';
 import { CvProfile } from './CvProfile';
 import { CvInfo } from './CvInfo';
+import { NavBar } from '../../common/NavBar/NavBar';
 
 export const Cv = () => {
   const student: StudentEntity[] = [
@@ -34,6 +35,7 @@ export const Cv = () => {
 
   return (
     <>
+      <NavBar />
       <section className='coursant'>
         <CvProfile data={student} />
         <CvInfo data={student} />

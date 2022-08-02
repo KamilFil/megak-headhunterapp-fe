@@ -1,7 +1,7 @@
 import { StudentEntity } from 'types';
 
 import './CvRequirment.css';
-import { QABox } from '../common/QABox';
+import { QABox } from '../../common/QABox';
 
 interface Props {
   title: string;

@@ -3,7 +3,7 @@ import { StudentEntity } from 'types';
 import './CvInfo.css';
 import { CvRating } from './CvRating';
 import { CvRequirment } from './CvRequirment';
-import { AnswerBox } from '../common/AnswerBox';
+import { AnswerBox } from '../../common/AnswerBox';
 import { CvProjectBox } from './CvProjectBox';
 
 interface Props {

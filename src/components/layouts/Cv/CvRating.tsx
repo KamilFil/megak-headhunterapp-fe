@@ -1,5 +1,5 @@
 import { StudentEntity } from 'types';
-import { Rating } from '../common/Rating';
+import { Rating } from '../../common/Rating';
 import './CvRating.css';
 interface Props {
   title: string;

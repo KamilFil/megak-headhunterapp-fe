@@ -1,5 +1,5 @@
 import { StudentEntity } from 'types';
-import { ProjectLink } from '../common/ProjectLink';
+import { ProjectLink } from '../../common/ProjectLink';
 
 interface Props {
   title: string;
