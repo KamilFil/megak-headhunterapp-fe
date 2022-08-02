@@ -1,0 +1,15 @@
+.graphite-button {
+    background-color: #292a2b;
+    padding: 8px;
+    margin-right: 8px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.graphite-button--active {
+    background-color: #e02735;
+}
+
+.graphite-button:active {
+    transform: scale(.98);
+}

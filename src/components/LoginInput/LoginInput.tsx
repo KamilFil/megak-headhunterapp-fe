@@ -12,6 +12,7 @@ interface Props {
 export const LoginInput = (props: Props) => {
     return (
         <input
+            className='login-input'
             type={props.type}
             placeholder={props.placeholder}
             value={props.value}

@@ -9,7 +9,9 @@
     scroll-behavior: smooth;
 }
 
-html, body {
+.focus-filter-body {
+    pointer-events: none;
+    overflow-y: hidden;
 }
 
 body {

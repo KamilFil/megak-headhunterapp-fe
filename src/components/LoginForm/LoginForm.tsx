@@ -11,6 +11,10 @@ export const LoginForm = () => {
         e.preventDefault();
     };
 
+    const handleClick = () => {
+        console.log('CLICK');
+    };
+
     return (
         <form onSubmit={handleLogin}>
             <LoginInput type='email' placeholder='E-mail' value={email} setValue={setEmail}/>
@@ -20,8 +24,8 @@ export const LoginForm = () => {
                 <p>
                     <span>Nie masz konta?</span> <a>Zarejestruj się</a>
                 </p>
-        <RedButton name='Zaloguj się' type='submit' />
-      </div>
-    </form>
-  );
+                <RedButton name='Zaloguj się' type='submit' handleClick={handleClick}/>
+            </div>
+        </form>
+    );
 };

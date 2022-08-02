@@ -1,6 +1,14 @@
+.filter-wrap {
+    min-height: 100vh;
+}
+
 .students-wrap {
     width: 72vw;
     margin: 0 auto;
+}
+
+.focus-filter {
+    filter: brightness(0.4);
 }
 
 @media (max-width: 425px) {
