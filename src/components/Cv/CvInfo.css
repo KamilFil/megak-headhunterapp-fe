@@ -1,0 +1,21 @@
+.coursant-info {
+    margin-left: 2px;
+    line-height: 27px;
+}
+
+.coursant-info h2 {
+    padding: 20px 20px;
+    font-size: 20px;
+    background-color: #292A2B;
+}
+
+.coursant-info p {
+    font-size: 14px;
+}
+
+.coursant-info > div > div {
+    padding: 20px 20px;
+}
+
+
+

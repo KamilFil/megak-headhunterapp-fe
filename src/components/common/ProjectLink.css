@@ -1,0 +1,17 @@
+.listlink {
+    display: flex;
+align-content: center;
+margin-top: 10px;
+}
+
+.linklist-item {
+    color: #0B8BD4;
+    text-decoration: none;
+}
+
+.fa-paperclip {
+    font-size: 24px;
+    color: #0B8BD4;
+    margin-right: 8px;
+    transform: rotate(-45deg);
+}
