@@ -4,7 +4,6 @@
     font-family: 'Catamaran';
     font-size: 16px;
     margin: 0;
-    padding: 0;
 }
 
 h2 {
@@ -17,6 +16,7 @@ h2 {
     color: white;
     width: 100%;
     margin: 0 auto;
+    padding: 10px 14vw;
     display: flex;
     justify-content: space-between;
 }
