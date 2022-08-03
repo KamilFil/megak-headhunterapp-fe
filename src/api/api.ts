@@ -1,5 +1,5 @@
-import axios from "axios";
-import {StudentEntity} from "types";
+import axios from 'axios';
+import {StudentEntity} from 'types';
 
 
 const API = axios.create({baseURL: 'http://localhost:3001'});
