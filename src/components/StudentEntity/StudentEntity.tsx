@@ -22,20 +22,21 @@ export const StudentEntity = ({ name, id }: Props) => {
   };
 
   return (
+    <>
       <div className='student-entity'>
         <div className='student-entity--heading'>
           <p className='student-entity--heading-name'>{name}</p>
           <div className='student-entity--heading-marks'>
             <RedButton
-                name='Zarezerwuj'
-                type='button'
-                additionalClass='red-button--smaller'
-                handleClick={handleClick}
+              name='Zarezerwuj'
+              type='button'
+              additionalClass='red-button--smaller'
+              handleClick={handleClick}
             />
             <div
-                className={`student-entity--heading-marks__arrow-wrap student-entity--heading-marks__arrow-wrap${id}`}
-                onClick={showHide}>
-              <UnFilledArrow additionalClass={`unfilled-arrow${id}`}/>
+              className={`student-entity--heading-marks__arrow-wrap student-entity--heading-marks__arrow-wrap${id}`}
+              onClick={showHide}>
+              <UnFilledArrow additionalClass={`unfilled-arrow${id}`} />
             </div>
           </div>
         </div>
@@ -79,6 +80,6 @@ export const StudentEntity = ({ name, id }: Props) => {
         </div>
       </div>
       <div className='student-entity--info-footer' />
-    </div>
+    </>
   );
 };

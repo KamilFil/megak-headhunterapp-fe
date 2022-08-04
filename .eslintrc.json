@@ -17,7 +17,11 @@
     "ecmaVersion": 2021,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "prettier"
+  ],
   "settings": {
     "import/resolver": {
       "typescript": {}
@@ -35,7 +39,7 @@
     "no-duplicate-imports": "error",
     "newline-per-chained-call": [
       2
-    ],
-    "allowEmptyCatch": true
+    ]
+//    "allowEmptyCatch": false
   }
 }
