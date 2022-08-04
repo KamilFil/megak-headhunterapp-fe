@@ -2,14 +2,16 @@ import React from 'react';
 import { RedButton } from '../common/RedButton/RedButton';
 import { UnFilledArrow } from '../common/UnFilledArrow/UnFilledArrow';
 import { StudentEntityOneInfo } from '../StudentEntityOneInfo/StudentEntityOneInfo';
-import './StudentEntity.css';
+import './Student.css';
+import {StudentEntity} from 'types';
 
 interface Props {
   name: string;
-  id: string;
+  id: string | undefined;
+  data: StudentEntity
 }
 
-export const StudentEntity = ({ name, id }: Props) => {
+export const Student = ({ name, id, data }: Props) => {
   const showHide = () => {
     const entityInfo: HTMLDivElement | null = document.querySelector(`.student-entity--info${id}`);
     const arrow: HTMLDivElement | null = document.querySelector(`.unfilled-arrow${id}`);
@@ -59,23 +61,23 @@ export const StudentEntity = ({ name, id }: Props) => {
             mainInfo='3'
             additionalInfo='/5'
           />
-          <StudentEntityOneInfo title='Preferowane miejsce pracy' mainInfo='Biuro' />
+          <StudentEntityOneInfo title='Preferowane miejsce pracy' mainInfo={data.expectedTypeWork} />
           <StudentEntityOneInfo
             title='Docelowe miasto, gdzie chce pracować kandydat'
-            mainInfo='Warszawa'
+            mainInfo={data.targetWorkCity}
           />
-          <StudentEntityOneInfo title='Oczekiwany typ kontraktu' mainInfo='Umowa o pracę' />
+          <StudentEntityOneInfo title='Oczekiwany typ kontraktu' mainInfo={data.expectedContractType} />
           <StudentEntityOneInfo
             title='Oczekiwane wynagrodzenie miesięczne netto'
-            mainInfo='8 000 zł'
+            mainInfo={data.expectedSalary !== null ? data.expectedSalary.toString() : null}
           />
           <StudentEntityOneInfo
             title='Zgoda na odbycie bezpłatnych praktyk/stażu na początek'
-            mainInfo='Tak'
+            mainInfo={data.canTakeApprenticeship === true ? 'Tak' : 'Nie'}
           />
           <StudentEntityOneInfo
             title='Komercyjne doświadczenie w programowaniu'
-            mainInfo='6 miesięcy'
+            mainInfo={`${data.monthsOfCommercialExp.toString()} miesięcy.`}
           />
         </div>
       </div>

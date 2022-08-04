@@ -3,7 +3,7 @@ import './StudentEntityOneInfo.css';
 
 interface Props {
     title: string;
-    mainInfo: string;
+    mainInfo: string | null;
     additionalInfo?: string;
 }
 

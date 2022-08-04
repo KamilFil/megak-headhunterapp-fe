@@ -1,17 +1,20 @@
 import React from 'react';
-import {StudentEntity} from '../StudentEntity/StudentEntity';
+import {Student} from '../Student/Student';
 import './StudentsList.css';
+import { StudentEntity } from 'types';
 
-export const StudentsList = () => {
+
+interface Props {
+    data: StudentEntity[]
+}
+
+export const StudentsList = (props: Props) => {
   return (
       <div className='students-list-wrap'>
         <div className='students-list'>
-          <StudentEntity name='Karol P.' id='1'/>
-          <StudentEntity name='Karol P.' id='3'/>
-          <StudentEntity name='Karol P.' id='4'/>
-          <StudentEntity name='Karol P.' id='5'/>
-          <StudentEntity name='Karol P.' id='6'/>
-          <StudentEntity name='Karol P.' id='7'/>
+            {props.data.map(student => (
+                <Student name={`${student.firstName} ${student.lastName.slice(0, 1)}.`} id={student.id} key={student.email} data={student}/>
+            ))}
         </div>
       </div>
   );
