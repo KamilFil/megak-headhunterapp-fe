@@ -1,0 +1,94 @@
+.student-entity {
+    padding: 8px 0;
+}
+
+.student-entity--heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.student-entity--heading-data {
+    display: flex;
+    flex-direction: row;
+}
+
+.student-entity--heading-user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.student-entity--heading-name {
+    margin-left: 12px;
+    white-space: nowrap;
+}
+
+.student-entity--heading-avatar {
+    width: 45px;
+    border-radius: 50%;
+}
+
+.student-entity--heading-marks {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.student-entity--heading-marks__arrow-wrap {
+    padding: 20px 14px 20px 26px;
+    cursor: pointer;
+}
+
+.student-entity--info {
+    height: 0;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: 0.05s ease-in-out;
+    pointer-events: none;
+}
+
+.student-entity--info--show {
+    height: auto;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.student-entity--info-content {
+    display: flex;
+}
+
+.student-entity--info-footer {
+    height: 16px;
+    background-color: #1e1e1f;
+}
+
+@media (max-width: 768px) {
+    .student-entity--info-content {
+        flex-wrap: wrap;
+        align-content: stretch;
+    }
+
+    .student-entity--heading-marks {
+        transform: scale(0.8);
+    }
+
+    .student-entity--heading-marks {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 425px) {
+    .student-entity--info-content {
+        flex-direction: column;
+    }
+
+    .student-entity--heading-marks__arrow-wrap {
+        padding: 10px 7px 10px 12px;
+    }
+
+    .red-button--smaller {
+        padding: 5px;
+    }
+}
