@@ -1,22 +1,33 @@
-import React from 'react';
+import React, { Dispatch, useEffect, useState } from 'react';
 import { StudentEntity } from 'types';
 import './StudentsInterviewsList.css';
 import { StudentInterview } from '../StudentInterview/StudentInterview';
+import { getAllStudentsToCall } from '../../api/api';
 
-interface Props {
-  data: StudentEntity[];
-}
+export const StudentsInterviewsList = () => {
+  const [studentsInterviews, setStudentsInterviews] = useState<StudentEntity[]>([]);
+  const [loading, setLoading] = useState(false);
 
-export const StudentsInterviewsList = ({ data }: Props) => {
+  useEffect(() => {
+    (async () => {
+      const res = await getAllStudentsToCall('1');
+
+      setStudentsInterviews(res.data);
+    })();
+    setLoading(false);
+    console.log(loading);
+  }, [loading]);
+
   return (
     <div className='students-list-wrap'>
       <div className='students-list'>
-        {data.map((student) => (
+        {studentsInterviews.map((student) => (
           <StudentInterview
             name={`${student.firstName} ${student.lastName}`}
             id={student.id}
             key={student.email}
             data={student}
+            setLoading={setLoading}
           />
         ))}
       </div>

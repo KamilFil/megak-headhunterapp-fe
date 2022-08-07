@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { Dispatch, useEffect, useState } from 'react';
 import { RedButton } from '../common/RedButton/RedButton';
 import { UnFilledArrow } from '../common/UnFilledArrow/UnFilledArrow';
 import { StudentEntityOneInfo } from '../StudentEntityOneInfo/StudentEntityOneInfo';
 import './Student.css';
-import {StudentEntity} from 'types';
+import { StudentEntity } from 'types';
+import { getAllStudents, setUserStatusToInterviewed } from '../../api/api';
 
 interface Props {
   name: string;
   id: string | undefined;
-  data: StudentEntity
+  data: StudentEntity;
+  setLoading: Dispatch<boolean>;
 }
 
-export const Student = ({ name, id, data }: Props) => {
+export const Student = ({ name, id, data, setLoading }: Props) => {
   const showHide = () => {
     const entityInfo: HTMLDivElement | null = document.querySelector(`.student-entity--info${id}`);
     const arrow: HTMLDivElement | null = document.querySelector(`.unfilled-arrow${id}`);
@@ -19,8 +21,10 @@ export const Student = ({ name, id, data }: Props) => {
     arrow?.classList.toggle('unfilled-arrow--rotate');
   };
 
-  const handleClick = () => {
-    console.log('CLICK');
+  const handleInterview = async () => {
+    setLoading(true);
+
+    await setUserStatusToInterviewed('1', data.id);
   };
 
   return (
@@ -33,7 +37,7 @@ export const Student = ({ name, id, data }: Props) => {
               name='Zarezerwuj'
               type='button'
               additionalClass='red-button--smaller'
-              handleClick={handleClick}
+              handleClick={handleInterview}
             />
             <div
               className={`student-entity--heading-marks__arrow-wrap student-entity--heading-marks__arrow-wrap${id}`}
@@ -61,12 +65,18 @@ export const Student = ({ name, id, data }: Props) => {
             mainInfo='3'
             additionalInfo='/5'
           />
-          <StudentEntityOneInfo title='Preferowane miejsce pracy' mainInfo={data.expectedTypeWork} />
+          <StudentEntityOneInfo
+            title='Preferowane miejsce pracy'
+            mainInfo={data.expectedTypeWork}
+          />
           <StudentEntityOneInfo
             title='Docelowe miasto, gdzie chce pracować kandydat'
             mainInfo={data.targetWorkCity}
           />
-          <StudentEntityOneInfo title='Oczekiwany typ kontraktu' mainInfo={data.expectedContractType} />
+          <StudentEntityOneInfo
+            title='Oczekiwany typ kontraktu'
+            mainInfo={data.expectedContractType}
+          />
           <StudentEntityOneInfo
             title='Oczekiwane wynagrodzenie miesięczne netto'
             mainInfo={data.expectedSalary !== null ? data.expectedSalary.toString() : null}

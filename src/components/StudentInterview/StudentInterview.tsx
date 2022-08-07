@@ -1,18 +1,25 @@
-import React from 'react';
+import React, { Dispatch, SyntheticEvent, useEffect, useState } from 'react';
 import './StudentInterveiw.css';
 import { RedButton } from '../common/RedButton/RedButton';
 import { UnFilledArrow } from '../common/UnFilledArrow/UnFilledArrow';
 import { StudentEntityOneInfo } from '../StudentEntityOneInfo/StudentEntityOneInfo';
 import { StudentEntity } from 'types';
 import avatar from '../../img/avatar.jpg';
+import {
+  getAllStudents,
+  getAllStudentsToCall,
+  setUserStatusToAvailable,
+  setUserStatusToHired,
+} from '../../api/api';
 
 interface Props {
   name: string;
   id: string | undefined;
   data: StudentEntity;
+  setLoading: Dispatch<boolean>;
 }
 
-export const StudentInterview = ({ name, id, data }: Props) => {
+export const StudentInterview = ({ name, id, data, setLoading }: Props) => {
   const showHide = () => {
     const entityInfo: HTMLDivElement | null = document.querySelector(`.student-entity--info${id}`);
     const arrow: HTMLDivElement | null = document.querySelector(`.unfilled-arrow${id}`);
@@ -20,8 +27,20 @@ export const StudentInterview = ({ name, id, data }: Props) => {
     arrow?.classList.toggle('unfilled-arrow--rotate');
   };
 
+  const handleHired = async () => {
+    setLoading(true);
+
+    await setUserStatusToHired('1', data.id);
+  };
+
+  const handleAvailable = async () => {
+    setLoading(true);
+
+    await setUserStatusToAvailable('1', data.id);
+  };
+
   const handleClick = () => {
-    console.log('CLICK');
+    console.log('Click!');
   };
 
   return (
@@ -54,13 +73,13 @@ export const StudentInterview = ({ name, id, data }: Props) => {
               name='Brak Zainteresowania'
               type='button'
               additionalClass='red-button--smaller'
-              handleClick={handleClick}
+              handleClick={handleAvailable}
             />
             <RedButton
               name='Zatrudniony'
               type='button'
               additionalClass='red-button--smaller'
-              handleClick={handleClick}
+              handleClick={handleHired}
             />
             <div
               className={`student-entity--heading-marks__arrow-wrap student-entity--heading-marks__arrow-wrap${id}`}
