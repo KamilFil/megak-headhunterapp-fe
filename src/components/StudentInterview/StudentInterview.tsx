@@ -1,10 +1,16 @@
-import React, { Dispatch, useEffect, useState } from 'react';
+import React, { Dispatch, SyntheticEvent, useEffect, useState } from 'react';
+import './StudentInterveiw.css';
 import { RedButton } from '../common/RedButton/RedButton';
 import { UnFilledArrow } from '../common/UnFilledArrow/UnFilledArrow';
 import { StudentEntityOneInfo } from '../StudentEntityOneInfo/StudentEntityOneInfo';
-import './Student.css';
 import { StudentEntity } from 'types';
-import { getAllStudents, setUserStatusToInterviewed } from '../../api/api';
+import avatar from '../../img/avatar.jpg';
+import {
+  getAllStudents,
+  getAllStudentsToCall,
+  setUserStatusToAvailable,
+  setUserStatusToHired,
+} from '../../api/api';
 
 interface Props {
   name: string;
@@ -13,7 +19,7 @@ interface Props {
   setLoading: Dispatch<boolean>;
 }
 
-export const Student = ({ name, id, data, setLoading }: Props) => {
+export const StudentInterview = ({ name, id, data, setLoading }: Props) => {
   const showHide = () => {
     const entityInfo: HTMLDivElement | null = document.querySelector(`.student-entity--info${id}`);
     const arrow: HTMLDivElement | null = document.querySelector(`.unfilled-arrow${id}`);
@@ -21,23 +27,59 @@ export const Student = ({ name, id, data, setLoading }: Props) => {
     arrow?.classList.toggle('unfilled-arrow--rotate');
   };
 
-  const handleInterview = async () => {
+  const handleHired = async () => {
     setLoading(true);
 
-    await setUserStatusToInterviewed('1', data.id);
+    await setUserStatusToHired('1', data.id);
+  };
+
+  const handleAvailable = async () => {
+    setLoading(true);
+
+    await setUserStatusToAvailable('1', data.id);
+  };
+
+  const handleClick = () => {
+    console.log('Click!');
   };
 
   return (
     <>
       <div className='student-entity'>
         <div className='student-entity--heading'>
-          <p className='student-entity--heading-name'>{name}</p>
+          <div className='student-entity--heading-data'>
+            <div className='student-entity--heading-reservation'>
+              <p>Rezerwacja do</p>
+              <p>18.08.2022 r.</p>
+            </div>
+            <div className='student-entity--heading-user'>
+              <img
+                className='student-entity--heading-avatar'
+                src={
+                  !data.githubUsername ? avatar : `https://github.com/${data.githubUsername}.png`
+                }
+              />
+              <p className='student-entity--heading-name'>{name}</p>
+            </div>
+          </div>
           <div className='student-entity--heading-marks'>
             <RedButton
-              name='Zarezerwuj'
+              name='Pokaż CV'
               type='button'
               additionalClass='red-button--smaller'
-              handleClick={handleInterview}
+              handleClick={handleClick}
+            />
+            <RedButton
+              name='Brak Zainteresowania'
+              type='button'
+              additionalClass='red-button--smaller'
+              handleClick={handleAvailable}
+            />
+            <RedButton
+              name='Zatrudniony'
+              type='button'
+              additionalClass='red-button--smaller'
+              handleClick={handleHired}
             />
             <div
               className={`student-entity--heading-marks__arrow-wrap student-entity--heading-marks__arrow-wrap${id}`}
