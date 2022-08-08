@@ -1,16 +1,12 @@
-import React, { Dispatch, SyntheticEvent, useEffect, useState } from 'react';
+import React, { Dispatch } from 'react';
 import './StudentInterveiw.css';
 import { RedButton } from '../common/RedButton/RedButton';
 import { UnFilledArrow } from '../common/UnFilledArrow/UnFilledArrow';
 import { StudentEntityOneInfo } from '../StudentEntityOneInfo/StudentEntityOneInfo';
 import { StudentEntity } from 'types';
 import avatar from '../../img/avatar.jpg';
-import {
-  getAllStudents,
-  getAllStudentsToCall,
-  setUserStatusToAvailable,
-  setUserStatusToHired,
-} from '../../api/api';
+import { setUserStatusToAvailable, setUserStatusToHired } from '../../api/api';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
   name: string;
@@ -26,6 +22,7 @@ export const StudentInterview = ({ name, id, data, setLoading }: Props) => {
     entityInfo?.classList.toggle('student-entity--info--show');
     arrow?.classList.toggle('unfilled-arrow--rotate');
   };
+  const navigate = useNavigate();
 
   const handleHired = async () => {
     setLoading(true);
@@ -39,8 +36,8 @@ export const StudentInterview = ({ name, id, data, setLoading }: Props) => {
     await setUserStatusToAvailable('1', data.id);
   };
 
-  const handleClick = () => {
-    console.log('Click!');
+  const handleShowCv = () => {
+    navigate(`/cv/${id}`);
   };
 
   return (
@@ -55,6 +52,7 @@ export const StudentInterview = ({ name, id, data, setLoading }: Props) => {
             <div className='student-entity--heading-user'>
               <img
                 className='student-entity--heading-avatar'
+                alt='avatar'
                 src={
                   !data.githubUsername ? avatar : `https://github.com/${data.githubUsername}.png`
                 }
@@ -67,7 +65,7 @@ export const StudentInterview = ({ name, id, data, setLoading }: Props) => {
               name='Pokaż CV'
               type='button'
               additionalClass='red-button--smaller'
-              handleClick={handleClick}
+              handleClick={handleShowCv}
             />
             <RedButton
               name='Brak Zainteresowania'
