@@ -5,6 +5,7 @@ import { CvProfile } from './CvProfile';
 import { CvInfo } from './CvInfo';
 import { NavBar } from '../../common/NavBar/NavBar';
 import { getStudentUser } from '../../../api/api';
+import { useParams } from 'react-router-dom';
 
 export const Cv = () => {
   const student: StudentEntity = {
@@ -30,10 +31,11 @@ export const Cv = () => {
     hireStatus: '',
   };
   const [studentUser, setStudentUser] = useState(student);
+  const { id } = useParams();
 
   useEffect(() => {
     (async () => {
-      const res = await getStudentUser('1');
+      const res = await getStudentUser(id as string);
 
       setStudentUser(res.data);
     })();
