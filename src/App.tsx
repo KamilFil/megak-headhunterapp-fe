@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Students } from './components/layouts/Students/Students';
 import { Login } from './components/layouts/Login/Login';
 import { Cv } from './components/layouts/Cv/Cv';
