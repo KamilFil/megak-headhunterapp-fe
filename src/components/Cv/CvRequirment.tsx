@@ -29,7 +29,7 @@ export const CvRequirment = (props: Props) => {
             answer={student.canTakeApprenticeship ? 'Tak' : 'nie'}
           />
           <QABox
-            question='Komercyjne doświadczenie w programowaniu'
+            question='Komercyjne doświadczenie ws programowaniu'
             answer={`${student.monthsOfCommercialExp} miesięcy`}
           />
         </div>
