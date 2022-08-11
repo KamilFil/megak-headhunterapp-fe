@@ -9,9 +9,7 @@ export const getStudentUser = (id: string) => API.get(`/student/${id}`);
 export const updateStudentUser = (id: string, updatedStudent: StudentEntity) =>
   API.patch(`/student/${id}`, updatedStudent);
 export const updateHireStatus = (id: string) => API.patch(`/student/hired/${id}`);
-
 /* HR paths */
-
 export const getAllStudents = () => API.get('/hr-user');
 export const getAllStudentsToCall = (hrId: string) => API.get(`/hr-user/call-list/${hrId}`);
 export const filterAllStudents = (queryString: string) =>
