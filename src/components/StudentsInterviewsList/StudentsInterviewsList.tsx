@@ -1,30 +1,29 @@
 import React, { Dispatch, useEffect, useState } from 'react';
-import { Student } from '../Student/Student';
-import './StudentsList.css';
 import { StudentEntity } from 'types';
-import { getAllStudents } from '../../api/api';
+import './StudentsInterviewsList.css';
+import { StudentInterview } from '../StudentInterview/StudentInterview';
+import { getAllStudentsToCall } from '../../api/api';
 
-export const StudentsList = () => {
-  const [students, setStudents] = useState<StudentEntity[]>([]);
+export const StudentsInterviewsList = () => {
+  const [studentsInterviews, setStudentsInterviews] = useState<StudentEntity[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     (async () => {
-      const res = await getAllStudents();
+      const res = await getAllStudentsToCall('1');
 
-      setStudents(res.data);
+      setStudentsInterviews(res.data);
     })();
     setLoading(false);
     console.log(loading);
-    console.log(students);
   }, [loading]);
 
   return (
     <div className='students-list-wrap'>
       <div className='students-list'>
-        {students.map((student) => (
-          <Student
-            name={`${student.firstName} ${student.lastName.slice(0, 1)}.`}
+        {studentsInterviews.map((student) => (
+          <StudentInterview
+            name={`${student.firstName} ${student.lastName}`}
             id={student.id}
             key={student.email}
             data={student}
