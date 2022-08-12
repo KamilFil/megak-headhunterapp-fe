@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useState } from 'react';
+import React, { SyntheticEvent, useEffect, useState } from 'react';
 import './AdminForm.css';
 import { RedButton } from '../common/RedButton/RedButton';
 
@@ -10,8 +10,10 @@ export const AdminForm = () => {
     maxReservedStudents: '',
   });
 
-  const handleSubmit = (e: SyntheticEvent) => {
-    e.preventDefault();
+  console.log(hrUser);
+
+  const handleSubmit = () => {
+    console.log('Click!');
   };
 
   return (
@@ -47,7 +49,7 @@ export const AdminForm = () => {
           onChange={(e) => setHrUser({ ...hrUser, maxReservedStudents: e.target.value })}
         />
         <div className='submit-wrap'>
-          <RedButton name='Wyślij' type='submit' />
+          <RedButton name='Wyślij' type='submit' handleClick={handleSubmit} />
         </div>
       </form>
     </div>

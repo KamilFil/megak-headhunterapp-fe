@@ -24,3 +24,7 @@ export const setUserStatusToHired = (hrId: string, studentId: string) =>
   API.patch(`/hr-user/hired/${hrId}/${studentId}`);
 export const setUserStatusToAvailable = (hrId: string, studentId: string) =>
   API.patch(`/hr-user/not-interested/${hrId}/${studentId}`);
+
+/* Admin paths */
+
+export const createHrByAdmin = (query: string) => API.post(`admin/upload-users-list${query}`);
