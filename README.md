@@ -1,46 +1,161 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# HeadhunterApp
 
-## Available Scripts
+The app is designed to help developers find a job. And also make it possible for potential employers to find them.
 
-In the project directory, you can run:
 
-### `npm start`
+## Run Locally
+Prepare your local server e.g. XAMPP.
+And database e.g. HeidiSQL,DBeaver
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Clone the projects
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Server
+```bash
+  git clone https://github.com/KamilFil/megak-headhunterapp-be
+```
 
-### `npm test`
+- Client
+```bash
+  git clone https://github.com/KamilFil/megak-headhunterapp-fe
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Go to the project directories
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+  cd megak-headhunterapp-fe
+```
+```bash
+  cd megak-headhunterapp-be
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install dependencies
 
-### `npm run eject`
+```bash
+  npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Start the server via script in package.json
+```bash
+  start:dev 
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Start the client via script in package.json
+```bash
+  start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## License
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to files:
+
+db.config.ts
+
+`host`,
+`port`,
+`username`,
+`password`
+
+mailer.config.ts
+
+`SEND_GRID_KEY`
+`SEND_GRID_ACCOUNT`
+
+
+## API Reference
+
+*Auth*
+____
+  #### Request
+
+| Name      | Path     | Method   | Description                                                                    | Params               | Permissions
+| :-------- | :------- | :------- | :------------------------------------------------------------------------------| :------------------- | :-------------
+| `login`   | `/login` | `POST`   | Log into application. Required existing **email** and **password** in database | `Body: email, pwd`   | All
+| `logout`  | `/logout`| `GET`    | Log out from application.                                                      | -                    | All
+
+
+
+*student*
+____
+
+  #### Request
+
+| Name               | Path            | Method   | Description                       | Params                                                         | Permissions
+| :----------------- | :-------------- | :------- | :-------------------------------- | :------------------------------------------------------------- | :-------------
+| `getStudentUser`   | `/:id`          | `GET`    | Get student data by id.           | `id`                                                           | Student
+| `updateStudentUser`| `/:id`          | `PATCH`  | Update student data by id.        | `id`                                                           | Student                               
+| `updateHireStatus` | `/hired/:id`    | `PATCH`  | Set student status on "hired".    | `id` `Body: firstName, lastName, projectUrls, githubUserName`  | Hr                              
+| `updateIsActive`   | `/activate/:id` | `PATCH`  | Set student account on "active".  | `id`                                                           | All                              
+
+
+*hr-user*
+____
+
+  #### Request
+
+| Name                         | Path                               | Method   | Description                             | Params                                                                                                       | Permissions
+| :--------------------------- | :--------------------------------- | :------- | :-------------------------------------- | :----------------------------------------------------------------------------------------------------------- | :-----------
+| `getAllStudents`             | `/`                                | `GET`    | Get all students.                       | -                                                                                                            | Hr
+| `getAllStudentsToCall`       | `/call-list/:hrId`                 | `GET`    | Get all students to call.               | `hrId`                                                                                                       | Hr
+| `filterAllStudents`          | `/call-list/filter`                | `GET`    | Get filtered list of users.             | `Query: expectedTypeWork,expectedContractType, expectedSalary, canTakeApprenticeship, monthsOfCommercialExp` | Hr
+| `setUserStatusToInterviewed` | `/call/:hrId/:studentId`           | `PATCH`  | Set student status to "interviewed".    | `hrId, studentId`                                                                                            | Hr
+| `getStudentCv`               | `/student-cv/:hrId/:studentId`     | `GET`    | Get user CV.                            | `hrId, studentId`                                                                                            | Hr
+| `setUserStatusToHired`       | `/hired/:hrId/:studentId`          | `PATCH`  | Set student status to "hired".          | `hrId, studentId`                                                                                            | Hr
+| `setUserStatusAvailable`     | `/not-interested/:hrId/:studentId` | `PATCH`  | Set student status to "not-interested". | `hrId, studentId`                                                                                            | Hr
+
+____
+*admin*
+
+  #### Request
+
+| Name                  | Path                 | Method    | Description                     | Params                                                 | Permissions
+| :-------------------- | :------------------- | :-------- | :------------------------------ | :----------------------------------------------------- | :-----------
+| `createHerByAdmin`    | `/create-hr`         | `POST`    | Create Hr user.                 | `Query: email, fullName, company, maxReservedStudents` | Admin
+| `uploadUsersList`     | `/upload-users-list` | `POST`    | Create student user from file.  | `Form data: [Key]: List, [Value]: *.json`              | Admin
+
+
+JSON file structure:
+
+```json
+[
+{
+   "email": "user1@example.com",
+   "courseCompletion": 2,
+   "courseEngagement": 2,
+   "projectDegree": 2,
+   "teamProjectDegree": 3,
+   "bonusProjectUrls":"url1, url2"
+},
+{
+   "email": "user2@example.com",
+   "courseCompletion": 3,
+   "courseEngagement": 3,
+   "projectDegree": 3,
+   "teamProjectDegree": 4,
+   "bonusProjectUrls":"url1"
+}
+]
+```
+## Authors
+
+- [@kamilfil](https://github.com/KamilFil)
+- [@zuravsky](https://github.com/Zuravsky)
+- [@piotrb95](https://github.com/PiotrB95)
+- [@karol](https://github.com/)
+- [@krzysiek](https://github.com/)
+
+
+## Tech Stack
+
+**Client:** React, HTML, CSS
+
+**Server:** Node, Express, Nest, TypeORM, Axios
+
