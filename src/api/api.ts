@@ -27,4 +27,4 @@ export const setUserStatusToAvailable = (hrId: string, studentId: string) =>
 
 /* Admin paths */
 
-export const createHrByAdmin = (query: string) => API.post(`admin/upload-users-list${query}`);
+export const createHrByAdmin = (query: string) => API.post(`admin/create-hr${query}`);

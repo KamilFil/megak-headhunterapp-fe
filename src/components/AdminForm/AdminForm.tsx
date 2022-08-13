@@ -1,6 +1,8 @@
 import React, { SyntheticEvent, useEffect, useState } from 'react';
 import './AdminForm.css';
 import { RedButton } from '../common/RedButton/RedButton';
+import { createHrByAdmin } from '../../api/api';
+import { useLocation, useParams } from 'react-router-dom';
 
 export const AdminForm = () => {
   const [hrUser, setHrUser] = useState({
@@ -10,10 +12,20 @@ export const AdminForm = () => {
     maxReservedStudents: '',
   });
 
+  const [query, setQuery] = useState('');
+
+  const location = useLocation();
+
+  console.log(location.search);
+
   console.log(hrUser);
 
   const handleSubmit = () => {
-    console.log('Click!');
+    try {
+      createHrByAdmin(query);
+    } catch (e: any) {
+      console.log(e.message);
+    }
   };
 
   return (
