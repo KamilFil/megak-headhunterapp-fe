@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { StudentEntity } from 'types';
+import { HrEntity, StudentEntity } from 'types';
 
 const API = axios.create({ baseURL: 'http://localhost:3001' });
 
@@ -27,4 +27,4 @@ export const setUserStatusToAvailable = (hrId: string, studentId: string) =>
 
 /* Admin paths */
 
-export const createHrByAdmin = (query: string) => API.post(`admin/create-hr${query}`);
+export const createHrByAdmin = (body: HrEntity) => API.post('admin/create-hr');

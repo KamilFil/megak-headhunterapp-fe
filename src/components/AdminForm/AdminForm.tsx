@@ -2,17 +2,15 @@ import React, { SyntheticEvent, useEffect, useState } from 'react';
 import './AdminForm.css';
 import { RedButton } from '../common/RedButton/RedButton';
 import { createHrByAdmin } from '../../api/api';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 export const AdminForm = () => {
   const [hrUser, setHrUser] = useState({
     email: '',
     fullName: '',
     company: '',
-    maxReservedStudents: '',
+    maxReservedStudents: 0,
   });
-
-  const [query, setQuery] = useState('');
 
   const location = useLocation();
 
@@ -22,7 +20,7 @@ export const AdminForm = () => {
 
   const handleSubmit = () => {
     try {
-      createHrByAdmin(query);
+      createHrByAdmin(hrUser);
     } catch (e: any) {
       console.log(e.message);
     }
@@ -58,7 +56,7 @@ export const AdminForm = () => {
           name='maxReservedStudents'
           placeholder='Maksymalna liczba osób'
           value={hrUser.maxReservedStudents}
-          onChange={(e) => setHrUser({ ...hrUser, maxReservedStudents: e.target.value })}
+          onChange={(e) => setHrUser({ ...hrUser, maxReservedStudents: Number(e.target.value) })}
         />
         <div className='submit-wrap'>
           <RedButton name='Wyślij' type='submit' handleClick={handleSubmit} />
