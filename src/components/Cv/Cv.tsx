@@ -3,8 +3,8 @@ import './Cv.css';
 import { StudentEntity } from 'types';
 import { CvProfile } from './CvProfile';
 import { CvInfo } from './CvInfo';
-import { NavBar } from '../../common/NavBar/NavBar';
-import { getStudentUser } from '../../../api/api';
+import { NavBar } from '../common/NavBar/NavBar';
+import { getStudentUser } from '../../api/api';
 import { useParams } from 'react-router-dom';
 
 export const Cv = () => {

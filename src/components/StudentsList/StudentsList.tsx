@@ -14,6 +14,7 @@ export const StudentsList = () => {
 
       setStudents(res.data);
     })();
+
     setLoading(false);
     console.log(loading);
     console.log(students);
