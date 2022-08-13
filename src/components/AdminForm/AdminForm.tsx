@@ -12,10 +12,6 @@ export const AdminForm = () => {
     maxReservedStudents: 0,
   });
 
-  const location = useLocation();
-
-  console.log(location.search);
-
   console.log(hrUser);
 
   const handleSubmit = () => {
