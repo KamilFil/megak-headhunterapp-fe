@@ -1,0 +1,14 @@
+.student-form {
+    background-color: #ddd;
+    padding: 20px;
+}
+
+.student-form-input {
+    margin: 8px;
+    padding: 3px;
+    background-color: #555555;
+}
+
+.student-form-input::placeholder {
+    color:white;
+}
