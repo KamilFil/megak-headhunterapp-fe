@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { StudentEntity } from 'types';
+import { StudentEntity, StudentEntityFilters } from 'types';
 
 const API = axios.create({ baseURL: 'http://localhost:3001' });
 
@@ -14,8 +14,8 @@ export const updateHireStatus = (id: string) => API.patch(`/student/hired/${id}`
 
 export const getAllStudents = () => API.get('/hr-user');
 export const getAllStudentsToCall = (hrId: string) => API.get(`/hr-user/call-list/${hrId}`);
-export const filterAllStudents = (queryString: string) =>
-  API.get(`/hr-user/call-list${queryString}`);
+export const filterAllStudents = (body: StudentEntityFilters) =>
+  API.post('/hr-user/users/filter', body);
 export const getStudentCv = (hrId: string, studentId: string) =>
   API.patch(`/hr-user/student-cv/${hrId}/${studentId}`);
 export const setUserStatusToInterviewed = (hrId: string, studentId: string) =>

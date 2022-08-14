@@ -15,7 +15,6 @@ export const StudentsInterviewsList = () => {
       setStudentsInterviews(res.data);
     })();
     setLoading(false);
-    console.log(loading);
   }, [loading]);
 
   return (
