@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { StudentEntity } from 'types';
+import { HrEntity, StudentEntity } from 'types';
 
 const API = axios.create({ baseURL: 'http://localhost:3001', withCredentials: true });
 
@@ -22,3 +22,8 @@ export const setUserStatusToHired = (hrId: string, studentId: string) =>
   API.patch(`/hr-user/hired/${hrId}/${studentId}`);
 export const setUserStatusToAvailable = (hrId: string, studentId: string) =>
   API.patch(`/hr-user/not-interested/${hrId}/${studentId}`);
+
+/* Admin paths */
+
+export const createHrByAdmin = (body: HrEntity) => API.post('admin/create-hr', body);
+export const uploadUsersList = (file: any) => API.post('admin/upload-users-list', file);

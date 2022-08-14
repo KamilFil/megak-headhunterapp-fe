@@ -7,6 +7,8 @@ import { AuthContext, AuthContextProvider } from './auth/AuthContext';
 import { CvStudent } from './components/layouts/CvStudent/CvStudent';
 import { UserEntity } from 'types';
 import { getStudentUser } from './api/api';
+import { Cv } from './components/layouts/Cv/Cv';
+import {Admin} from './components/Admin/Admin';
 
 export const App = () => {
   const auth = useContext(AuthContext);
@@ -35,6 +37,7 @@ export const App = () => {
         {/* <Route path='/students' element={<Students />} />*/}
         <Route path='/cv/:id' element={<Cv data={data} />} />
         <Route path='/' element={<Navigate to='/login' />} />
+        <Route path='/admin' element={<Admin />} />
       </Routes>
     </AuthContextProvider>
   );

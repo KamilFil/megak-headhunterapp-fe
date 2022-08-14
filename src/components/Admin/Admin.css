@@ -1,0 +1,14 @@
+.admin-wrap {
+    width: 350px;
+    max-width: 400px;
+    position: absolute;
+    top: 30vh;
+    left: calc(50% - 175px);
+}
+
+@media (max-width: 425px) {
+    .admin-wrap {
+        width: 250px;
+        left: calc(50% - 125px);
+    }
+}
