@@ -1,17 +1,18 @@
-import React, { Dispatch, SetStateAction, useContext, useEffect, useState } from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import './UserMenu.css';
-import { AuthContext } from '../../auth/AuthContext';
-import { getStudentUser } from '../../api/api';
-import { UserEntity } from 'types';
+import { authLogut, setUserStatusToAvailable } from '../../api/api';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
-  // data: UserEntity | null;
   setVisible: Dispatch<SetStateAction<boolean>>;
 }
 
 export const UserMenu = ({ setVisible }: Props) => {
+  const navigate = useNavigate();
+
   const handleLogout = async () => {
-    setVisible(false);
+    await authLogut();
+    navigate('/login');
   };
 
   // if (!props.data) {

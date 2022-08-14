@@ -1,17 +1,14 @@
-import React, { Fragment, useContext, useEffect, useState } from 'react';
-import { Navigate, Route, Router, Routes } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { Students } from './components/layouts/Students/Students';
 import { Login } from './components/layouts/Login/Login';
 import { Cv } from './components/Cv/Cv';
-import { AuthContext, AuthContextProvider } from './auth/AuthContext';
-import { CvStudent } from './components/layouts/CvStudent/CvStudent';
+import { AuthContextProvider } from './auth/AuthContext';
 import { UserEntity } from 'types';
-import { getStudentUser } from './api/api';
-import { Cv } from './components/layouts/Cv/Cv';
-import {Admin} from './components/Admin/Admin';
+import { Admin } from './components/Admin/Admin';
 
 export const App = () => {
-  const auth = useContext(AuthContext);
+  // const auth = useContext(AuthContext);
   const [data, setData] = useState<UserEntity | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -23,7 +20,6 @@ export const App = () => {
       });
       const data = await res.json();
       setData(data);
-      console.log(data);
       setLoading(false);
     })();
   }, [loading]);
@@ -37,7 +33,7 @@ export const App = () => {
         {/* <Route path='/students' element={<Students />} />*/}
         <Route path='/cv/:id' element={<Cv data={data} />} />
         <Route path='/' element={<Navigate to='/login' />} />
-        <Route path='/admin' element={<Admin />} />
+        <Route path='/admin' element={<Admin data={data} />} />
       </Routes>
     </AuthContextProvider>
   );

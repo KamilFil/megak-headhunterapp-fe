@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Cv.css';
 import { StudentEntity, UserEntity } from 'types';
 import { CvProfile } from './CvProfile';
 import { CvInfo } from './CvInfo';
 import { NavBar } from '../common/NavBar/NavBar';
-import { authGetUse, getStudentUser } from '../../api/api';
+import { getStudentUser } from '../../api/api';
 import { useParams } from 'react-router-dom';
 
 interface Props {

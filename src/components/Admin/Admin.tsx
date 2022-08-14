@@ -3,11 +3,16 @@ import { AdminForm } from '../AdminForm/AdminForm';
 import './Admin.css';
 import { NavBar } from '../common/NavBar/NavBar';
 import { ImportButton } from '../ImportButton/ImportButton';
+import { UserEntity } from 'types';
 
-export const Admin = () => {
+interface Props {
+  data: UserEntity | null;
+}
+
+export const Admin = (props: Props) => {
   return (
     <>
-      <NavBar />
+      <NavBar data={props.data} />
       <div className='admin-wrap'>
         <AdminForm />
         <ImportButton />

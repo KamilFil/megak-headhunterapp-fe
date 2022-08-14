@@ -1,4 +1,3 @@
-import { StudentEntity } from 'types';
 import { ProjectLink } from '../common/ProjectLink';
 
 interface Props {

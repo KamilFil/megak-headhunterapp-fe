@@ -26,7 +26,6 @@ export const StudentInterview = ({ name, id, data, setLoading }: Props) => {
 
   const handleHired = async () => {
     setLoading(true);
-
     await setUserStatusToHired('1', data.id);
   };
 

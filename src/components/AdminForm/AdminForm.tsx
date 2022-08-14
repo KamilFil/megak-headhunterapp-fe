@@ -1,8 +1,6 @@
-import React, { SyntheticEvent, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './AdminForm.css';
-import { RedButton } from '../common/RedButton/RedButton';
 import { createHrByAdmin } from '../../api/api';
-import { useLocation } from 'react-router-dom';
 
 export const AdminForm = () => {
   const [hrUser, setHrUser] = useState({

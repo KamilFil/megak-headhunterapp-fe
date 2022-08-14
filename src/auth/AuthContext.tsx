@@ -1,6 +1,5 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
 import { AdminEntity, HrEntity, StudentEntity } from 'types';
-import { Role } from '../../../megak-headhunterapp-be/types/auth/role.enum';
 
 export type AuthUser = {
   data: StudentEntity | HrEntity | AdminEntity | null;
@@ -19,7 +18,7 @@ export const AuthContext = createContext({} as AuthContextType);
 
 export const AuthContextProvider = ({ children }: UserContextProviderProps) => {
   const [auth, setAuth] = useState<AuthUser | null>({} as AuthUser);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   // useEffect(() => {
   //   (async () => {
