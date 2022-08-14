@@ -6,8 +6,13 @@ import { StudentsList } from '../../StudentsList/StudentsList';
 import { ListFooter } from '../../ListFooter/ListFooter';
 import './Students.css';
 import { StudentsInterviewsList } from '../../StudentsInterviewsList/StudentsInterviewsList';
+import { UserEntity } from 'types';
 
-export const Students = () => {
+interface Props {
+  data: UserEntity | null;
+}
+
+export const Students = (props: Props) => {
   const [viewSelect, setViewSelect] = useState<'studentsList' | 'studentsInterviews'>(
     'studentsList',
   );
@@ -17,7 +22,7 @@ export const Students = () => {
 
   return (
     <>
-      <NavBar />
+      <NavBar data={props.data} />
       <div className='students-wrap'>
         <ViewSelect viewSelect={viewSelect} setViewSelect={setViewSelect} />
         <SearchBar />

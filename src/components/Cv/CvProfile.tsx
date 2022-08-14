@@ -1,8 +1,8 @@
 import React from 'react';
 import { StudentEntity } from 'types';
 import './CvProfile.css';
-import { RedButton } from '../../common/RedButton/RedButton';
-import { setUserStatusToAvailable, setUserStatusToHired } from '../../../api/api';
+import { RedButton } from '../common/RedButton/RedButton';
+import { setUserStatusToAvailable, setUserStatusToHired } from '../../api/api';
 import { useNavigate } from 'react-router-dom';
 
 interface Props {

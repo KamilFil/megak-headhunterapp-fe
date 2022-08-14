@@ -10,8 +10,8 @@ interface Props {
 
 export const RedButton = (props: Props) => {
   return (
-      <button type={props.type} className='red-button' onClick={props.handleClick}>
-        {props.name}
-      </button>
+    <button type={props.type} className='red-button' onClick={props.handleClick}>
+      {props.name}
+    </button>
   );
 };

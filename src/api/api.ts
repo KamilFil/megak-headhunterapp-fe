@@ -1,18 +1,16 @@
 import axios from 'axios';
 import { HrEntity, StudentEntity } from 'types';
 
-const API = axios.create({ baseURL: 'http://localhost:3001' });
+const API = axios.create({ baseURL: 'http://localhost:3001', withCredentials: true });
 
 /* Student paths */
-
-export const getStudentUser = (id: string) => API.get(`/student/${id}`);
+export const authGetUse = (id: string | null) => API.get(`/auth/user/${id}`);
+export const getStudentUser = (id: string | undefined) => API.get(`/student/${id}`);
 export const updateStudentUser = (id: string, updatedStudent: StudentEntity) =>
   API.patch(`/student/${id}`, updatedStudent);
 export const updateHireStatus = (id: string) => API.patch(`/student/hired/${id}`);
-
 /* HR paths */
-
-export const getAllStudents = () => API.get('/hr-user');
+export const getAllStudents = () => API.get('/hr-user/');
 export const getAllStudentsToCall = (hrId: string) => API.get(`/hr-user/call-list/${hrId}`);
 export const filterAllStudents = (queryString: string) =>
   API.get(`/hr-user/call-list${queryString}`);
