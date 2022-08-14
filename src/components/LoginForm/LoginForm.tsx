@@ -46,7 +46,7 @@ export const LoginForm = () => {
           </p>
           {/* <RedButton name='Zaloguj się' type='submit' handleClick={handleClick} />*/}
           <button type='submit' onClick={handleLogin}>
-            Zaloguj dsie
+            Zaloguj sie
           </button>
         </div>
       </form>
