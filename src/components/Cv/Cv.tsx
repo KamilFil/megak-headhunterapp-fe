@@ -1,32 +1,49 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Cv.css';
-import { StudentEntity } from 'types';
+import { StudentEntity, UserEntity } from 'types';
 import { CvProfile } from './CvProfile';
 import { CvInfo } from './CvInfo';
 import { NavBar } from '../common/NavBar/NavBar';
-import { getStudentUser } from '../../api/api';
+import { authGetUse, getStudentUser } from '../../api/api';
 import { useParams } from 'react-router-dom';
 
-export const Cv = () => {
-  const [studentUser, setStudentUser] = useState<StudentEntity | null>(null);
-  const { id } = useParams();
+interface Props {
+  data: UserEntity | null;
+}
 
+export const Cv = (props: Props) => {
+  const { id } = useParams();
+  const [studentUser, setStudentUser] = useState<StudentEntity | null>(null);
+  const [loading, setLoading] = useState(false);
+  console.log(id);
   useEffect(() => {
     (async () => {
-      const res = await getStudentUser(id as string);
-      console.log(res);
-      // const data = await res.json();
-      setStudentUser(res.data);
+      if (id) {
+        const res = await getStudentUser(id as string);
+        setStudentUser(res.data);
+        setLoading(false);
+      } else if (props.data) {
+        const res = await getStudentUser(props.data.id);
+        setStudentUser(res.data);
+        setLoading(false);
+      }
     })();
-  }, []);
+  }, [loading]);
 
   if (studentUser === null) {
     return <p>Ładowanie zasobów</p>;
   }
 
+  if (!props.data) {
+    return null;
+  }
+
+  console.log(props.data.id);
+
   return (
     <>
-      <NavBar />
+      <NavBar data={props.data} />
+
       <section className='coursant'>
         <CvProfile data={studentUser} />
         <CvInfo data={studentUser} />

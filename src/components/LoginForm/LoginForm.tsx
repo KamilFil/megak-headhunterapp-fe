@@ -2,11 +2,8 @@ import React, { FormEvent, useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LoginInput } from '../LoginInput/LoginInput';
 import './LoginForm.css';
-import { AuthContext } from '../../auth/AuthContext';
 
 export const LoginForm = () => {
-  const authContext = useContext(AuthContext);
-
   const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
@@ -22,8 +19,6 @@ export const LoginForm = () => {
         body: JSON.stringify({ email, pwd }),
       });
       const data = await res.json();
-      console.log(data);
-      authContext.setAuth(data);
       if (data.roles === 'student') {
         navigate('/coursant');
       } else if (data.roles === 'hr') {
@@ -33,8 +28,7 @@ export const LoginForm = () => {
       } else {
         navigate('/login');
       }
-
-      // setSuccess(true);
+      console.log(data);
     } catch (e) {
       console.error(e);
     }

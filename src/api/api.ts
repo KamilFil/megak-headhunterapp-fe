@@ -4,7 +4,8 @@ import { StudentEntity } from 'types';
 const API = axios.create({ baseURL: 'http://localhost:3001', withCredentials: true });
 
 /* Student paths */
-export const getStudentUser = (id: string) => API.get(`/student/${id}`);
+export const authGetUse = (id: string | null) => API.get(`/auth/user/${id}`);
+export const getStudentUser = (id: string | undefined) => API.get(`/student/${id}`);
 export const updateStudentUser = (id: string, updatedStudent: StudentEntity) =>
   API.patch(`/student/${id}`, updatedStudent);
 export const updateHireStatus = (id: string) => API.patch(`/student/hired/${id}`);

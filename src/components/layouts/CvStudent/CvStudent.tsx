@@ -1,14 +1,14 @@
 import React from 'react';
+import { AdminEntity, HrEntity, StudentEntity, UserEntity } from 'types';
 
-// import './Login.css';
-import { NavBar } from '../../common/NavBar/NavBar';
 import { Cv } from '../../Cv/Cv';
-
-export const CvStudent = () => {
+interface Props {
+  data: UserEntity | null;
+}
+export const CvStudent = (props: Props) => {
   return (
     <>
-      <NavBar />
-      <Cv />
+      <Cv data={props.data} />
     </>
   );
 };

@@ -1,20 +1,26 @@
-import React, { Dispatch, SetStateAction, useContext } from 'react';
+import React, { Dispatch, SetStateAction, useContext, useEffect, useState } from 'react';
 import './UserMenu.css';
 import { AuthContext } from '../../auth/AuthContext';
+import { getStudentUser } from '../../api/api';
+import { UserEntity } from 'types';
 
 interface Props {
+  // data: UserEntity | null;
   setVisible: Dispatch<SetStateAction<boolean>>;
 }
 
 export const UserMenu = ({ setVisible }: Props) => {
-  const user = useContext(AuthContext);
   const handleLogout = async () => {
     setVisible(false);
   };
 
+  // if (!props.data) {
+  //   return null;
+  // }
+
   return (
     <div className='user-menu'>
-      {user?.auth?.roles ? <p>{user.auth.roles}</p> : <p>Brak</p>}
+      {/* {props.data.roles ? <p>{props.data.roles}</p> : <p>Brak</p>}*/}
       <a>Edytuj profil</a>
       <a onClick={handleLogout}>Wyloguj się</a>
     </div>
