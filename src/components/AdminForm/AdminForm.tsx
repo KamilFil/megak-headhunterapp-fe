@@ -24,7 +24,7 @@ export const AdminForm = () => {
 
   return (
     <div className='admin-form'>
-      <h1>Formularz dodawania HR</h1>
+      <label className='admin-form--label'>Formularz dodawania HR</label>
       <form onSubmit={handleSubmit}>
         <input
           type='email'
@@ -54,9 +54,7 @@ export const AdminForm = () => {
           value={hrUser.maxReservedStudents}
           onChange={(e) => setHrUser({ ...hrUser, maxReservedStudents: Number(e.target.value) })}
         />
-        <div className='submit-wrap'>
-          <RedButton name='Wyślij' type='submit' handleClick={handleSubmit} />
-        </div>
+        <input type='submit' className='admin-form--submit' value='Wyślij' />
       </form>
     </div>
   );
