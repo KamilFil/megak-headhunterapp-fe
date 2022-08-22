@@ -39,15 +39,16 @@ export const LoginForm = () => {
       <form>
         <LoginInput type='email' placeholder='E-mail' value={email} setValue={setEmail} />
         <LoginInput type='password' placeholder='Hasło' value={pwd} setValue={setPwd} />
-        <a className='forgotten-password'>Zapomniałeś hasła?</a>
+        <button type='submit' onClick={handleLogin}>
+          Zaloguj się
+        </button>
         <div className='submit-wrap'>
+          <a className='forgotten-password'>Zapomniałeś hasła?</a>
           <p>
             <span>Nie masz konta?</span> <a>Zarejestruj się</a>
           </p>
           {/* <RedButton name='Zaloguj się' type='submit' handleClick={handleClick} />*/}
-          <button type='submit' onClick={handleLogin}>
-            Zaloguj sie
-          </button>
+
         </div>
       </form>
     </>

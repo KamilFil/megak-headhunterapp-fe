@@ -5,15 +5,18 @@ form {
 }
 
 .forgotten-password {
-    display: block;
-    margin: 0 0 20px auto;
+    display: flex;
     text-decoration: none;
 }
 
 .submit-wrap {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     cursor: default;
+    width: 100%;
+    margin: 1vh 0vh;
 }
 
 a {
