@@ -15,7 +15,6 @@ export const Admin = (props: Props) => {
       <NavBar data={props.data} />
       <div className='admin-wrap'>
         <AdminForm />
-        <ImportButton />
       </div>
     </>
   );

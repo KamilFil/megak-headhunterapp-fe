@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './AdminForm.css';
 import { createHrByAdmin } from '../../api/api';
+import {ImportButton} from '../ImportButton/ImportButton';
 
 export const AdminForm = () => {
   const [hrUser, setHrUser] = useState({
@@ -54,6 +55,7 @@ export const AdminForm = () => {
         />
         <input type='submit' className='admin-form--submit' value='Wyślij' />
       </form>
+      <ImportButton/>
     </div>
   );
 };
